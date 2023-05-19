@@ -1679,7 +1679,11 @@ HashMap<String, List<String>> map = new HashMap<>();
 map.computeIfAbsent(key, k -> new ArrayList<>()).add(value);
 
 // Verwendung von putIfAbsent
-map.putIfAbsent(key, new ArrayList<>()).add(value);
+var defaultList = new ArrayList<>();
+// ...
+map.putIfAbsent(key, defaultList);
+// return value of putIfAbsent returns last value which may be null.
+defaultList.add(value);
 ```
 
 ### Vorteile
@@ -1688,9 +1692,8 @@ map.putIfAbsent(key, new ArrayList<>()).add(value);
 - Einfachere und sicherere Handhabung beim Hinzufügen von Werten zu einem Schlüssel, wenn der Schlüssel nicht vorhanden ist
 - Verbesserte Effizienz und Lesbarkeit des Codes
 
-### Ausnahmen
-
-Es gibt keine spezifischen Ausnahmen. Die Verwendung von `computeIfAbsent` und `putIfAbsent` für HashMaps in Java ist eine bewährte Vorgehensweise und sollte in den meisten Fällen angewendet werden.
+### Nachteile
+- `computeIfAbsent` und `putIfAbsent` verhalten sich unterschiedlich in Bezug auf den Rückgabewert. `putIfAbsent` liefert als Rückgabe den vorherigen Wert, während `computeIfAbsent` den berechneten (computed) zurückgibt. Damit ist es mit `computeIfAbsent` möglich einen Wert mit `add` sofort hinzuzufügen, während dies mit `putIfAbsent` nicht funktioniert.
 
 ### Weiterführende Literatur/Links
 
