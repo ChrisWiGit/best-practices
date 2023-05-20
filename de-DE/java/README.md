@@ -109,7 +109,7 @@
     - [Nachteile](#nachteile-8)
     - [Ausnahmen](#ausnahmen-14)
     - [Weiterführende Literatur/Links](#weiterführende-literaturlinks-4)
-  - [Verwendung von Optional anstelle von null](#verwendung-von-optional-anstelle-von-null)
+  - [Verwendung von Optional als Funktionswert](#verwendung-von-optional-als-funktionswert)
     - [Problem](#problem-16)
     - [Refactoring](#refactoring-15)
     - [Vorteile](#vorteile-16)
@@ -1358,59 +1358,47 @@ Die Anzahl der Codezeilen in einer Methode oder Funktion kann je nach Kontext un
 - [Refactoring: Improving the Design of Existing Code](https://www.amazon.com/dp/0201485672)
 - [Effective JavaScript: 68 Specific Ways to Harness the Power of JavaScript](https://www.amazon.com/dp/0321812182)
 
-## Verwendung von Optional anstelle von null
-
-Die Verwendung von `Optional` anstelle von `null` verbessert die Code-Lesbarkeit und reduziert potenzielle NullPointerException-Fehler.
+## Verwendung von Optional als Funktionswert
 
 ### Problem
-
-Die Verwendung von `null` als Platzhalter oder fehlenden Wert kann zu Fehlern führen, wenn nicht entsprechend auf `null` geprüft wird. Das Übersehen einer solchen Prüfung kann zu NullPointerException-Fehlern führen.
+Bei der Rückgabe von Werten aus einer Funktion in Java besteht oft die Möglichkeit, dass kein Wert vorhanden ist. In solchen Fällen wird häufig null zurückgegeben, was zu potenziellen NullPointerExceptions führen kann. 
 
 ```java
-String name = null;
-if (name != null) {
-    // Code zur Verarbeitung des Namens
-} else {
-    // Behandlung des fehlenden Namens
+public String getUserName() {
+    if (benutzernameExistiert) {
+        return benutzername;
+    }
+    return null;    
 }
 ```
 
 ### Refactoring
-
-Die Verwendung von `Optional` ermöglicht es uns, die Möglichkeit eines fehlenden Werts klar zu kennzeichnen, ohne dass wir explizit auf `null` prüfen müssen.
+Statt null als Rückgabewert zu verwenden, empfiehlt es sich, die Klasse `Optional` aus dem Java-Standardpaket zu verwenden. Mit `Optional` können wir explizit angeben, dass ein Wert optional sein kann und den Entwicklern ermöglichen, damit umzugehen.
 
 ```java
-Optional<String> name = Optional.empty();
-if (name.isPresent()) {
-    // Code zur Verarbeitung des Namens
-} else {
-    // Behandlung des fehlenden Namens
+public Optional<String> getUserName() {
+    // Logik, um den Benutzernamen abzurufen
+    // ...
+    if (benutzernameExistiert) {
+        return Optional.of(benutzername);
+    } 
+     
+    return Optional.empty();
 }
 ```
 
-Alternativ können wir auch die Funktionen von `Optional` nutzen, um den Code weiter zu vereinfachen:
-
-```java
-Optional<String> name = Optional.ofNullable(getName());
-name.ifPresent(n -> {
-    // Code zur Verarbeitung des Namens
-});
-name.orElseGet(() -> {
-    // Behandlung des fehlenden Namens
-});
-```
-
 ### Vorteile
+- Klarere Aussage über die Möglichkeit eines fehlenden Werts
+- Vermeidung von NullPointerExceptions
+- Zwingt Entwickler dazu, explizit mit dem möglichen Fehlen des Werts umzugehen
 
-- Verbesserte Lesbarkeit des Codes durch klare Kennzeichnung eines potenziell fehlenden Werts
-- Reduzierung des Risikos von NullPointerException-Fehlern
-- Einfachere und prägnantere Code-Struktur
+### Nachteile
+- Erfordert, dass Entwickler den `Optional`-Typ verstehen und richtig damit umgehen
 
 ### Ausnahmen
+Es kann Ausnahmefälle geben, in denen die Verwendung von `Optional` nicht sinnvoll ist, z. B. wenn die Performance eine Rolle spielt und die Verwendung von `Optional` zu unnötiger Komplexität führen würde.
 
-Die Verwendung von `Optional` ist optional und sollte nicht in allen Fällen erzwungen werden. In einigen Situationen kann die Verwendung von `null` angemessen sein, insbesondere wenn sie von externen Bibliotheken oder Frameworks erwartet wird.
-
-### Weiterführende Literatur/Links
+### weiterführende Literatur/Links
 
 - [Effective Java: Third Edition](https://www.amazon.com/dp/0134685997)
 - [Java Optional - Oracle Documentation](https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/Optional.html)
