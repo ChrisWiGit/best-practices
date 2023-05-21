@@ -607,8 +607,6 @@ JavaDoc-Kommentare können auch automatisch generiert werden, um API-Dokumentati
 Es gibt keine Ausnahmen von der Verwendung von JavaDoc, da es eine bewährte Methode ist, um den Code zu dokumentieren und seine Lesbarkeit und Wartbarkeit zu verbesser.
 Allerdings können JavaDoc-Kommentare zu einem höheren Aufwand führen, insbesondere in kleineren Codeprojekten oder in Projekten, die nur von einem einzigen Entwickler gewartet werden.
 
-Gerne! Hier ist der erweiterte Text mit einer Liste von möglichen Annotations-Typen:
-
 ## JetBrains Annotations
 
 ### Problem
