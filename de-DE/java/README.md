@@ -1229,7 +1229,8 @@ Die Anzahl der Codezeilen in einer Methode oder Funktion kann je nach Kontext un
 ## Verwendung von Optional als Funktionswert
 
 ### Problem
-Bei der Rückgabe von Werten aus einer Funktion in Java besteht oft die Möglichkeit, dass kein Wert vorhanden ist. In solchen Fällen wird häufig null zurückgegeben, was zu potenziellen NullPointerExceptions führen kann. 
+
+Bei der Rückgabe von Werten aus einer Funktion in Java besteht oft die Möglichkeit, dass kein Wert vorhanden ist. In solchen Fällen wird häufig null zurückgegeben, was zu potenziellen NullPointerExceptions führen kann.
 
 ```java
 public String getUserName() {
@@ -1241,6 +1242,7 @@ public String getUserName() {
 ```
 
 ### Refactoring
+
 Statt null als Rückgabewert zu verwenden, empfiehlt es sich, die Klasse `Optional` aus dem Java-Standardpaket zu verwenden. Mit `Optional` können wir explizit angeben, dass ein Wert optional sein kann und den Entwicklern ermöglichen, damit umzugehen.
 
 ```java
@@ -1256,14 +1258,17 @@ public Optional<String> getUserName() {
 ```
 
 ### Vorteile
+
 - Klarere Aussage über die Möglichkeit eines fehlenden Werts
 - Vermeidung von NullPointerExceptions
 - Zwingt Entwickler dazu, explizit mit dem möglichen Fehlen des Werts umzugehen
 
 ### Nachteile
+
 - Erfordert, dass Entwickler den `Optional`-Typ verstehen und richtig damit umgehen
 
 ### Ausnahmen
+
 Es kann Ausnahmefälle geben, in denen die Verwendung von `Optional` nicht sinnvoll ist, z. B. wenn die Performance eine Rolle spielt und die Verwendung von `Optional` zu unnötiger Komplexität führen würde.
 
 ### weiterführende Literatur/Links
@@ -1460,7 +1465,7 @@ Es kann Situationen geben, in denen der direkte Zugriff auf interne Objekte notw
 
 Es ist eine bewährte Praxis in Java und JavaScript, dass Methoden/Funktionen, die Listen, Hashmaps oder Arrays zurückgeben, niemals null zurückgeben sollten. Stattdessen sollte immer eine leere Liste, HashMap oder ein leeres Array zurückgegeben werden.
 
-> Alternativ kann auch [Verwendung von Optional anstelle von null] angewendet werden.(#verwendung-von-optional-anstelle-von-null)
+> Alternativ kann auch [Verwendung von Optional als Funktionswert](#verwendung-von-optional-als-funktionswert) angewendet werden.
 
 ### Problem
 
@@ -1549,6 +1554,7 @@ defaultList.add(value);
 - Verbesserte Effizienz und Lesbarkeit des Codes
 
 ### Nachteile
+
 - `computeIfAbsent` und `putIfAbsent` verhalten sich unterschiedlich in Bezug auf den Rückgabewert. `putIfAbsent` liefert als Rückgabe den vorherigen Wert, während `computeIfAbsent` den berechneten (computed) zurückgibt. Damit ist es mit `computeIfAbsent` möglich einen Wert mit `add` sofort hinzuzufügen, während dies mit `putIfAbsent` nicht funktioniert.
 
 ### Weiterführende Literatur/Links
