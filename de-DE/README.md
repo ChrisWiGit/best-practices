@@ -4,9 +4,6 @@
 - [Entwicklung - Best Practises](#entwicklung---best-practises)
   - [Themen](#themen)
   - [Begriffsdefinition](#begriffsdefinition)
-    - [Code Refactoring](#code-refactoring)
-    - [Best Practices (Beste Vorgehensweisen)](#best-practices-beste-vorgehensweisen)
-    - [Design Patterns](#design-patterns)
   - [Allgemeines Code-Refactoring](#allgemeines-code-refactoring)
 
 <!-- /TOC -->
