@@ -26,7 +26,9 @@ Bei der Verwendung von Vue.js besteht die Versuchung, die Direktiven v-if und v-
 ```html
 <!-- Falsch -->
 <ul>
-  <li v-for="item in items" v-if="item.isActive">{{ item.name }}</li>
+  <li v-for="item in items">
+    <span v-if="item.isActive">>{{ item.name }}</span>
+  </li>
 </ul>
 ```
 
