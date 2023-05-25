@@ -131,8 +131,8 @@ In solchen Fällen ist es sinnvoller, die Methode so kurz wie möglich zu gestal
 
 ### Ausnahmen
 
-Es gibt Situationen, in denen längere Methoden notwendig sein können, z.B. bei der Implementierung von komplexer Logi.
-In solchen Fällen sollten Methoden jedoch so kurz wie möglich gehalten werden und auf spezifische Aufgaben fok
+Es gibt Situationen, in denen längere Methoden notwendig sein können, z.B. bei der Implementierung von komplexer Logik.
+In solchen Fällen sollten Methoden jedoch so kurz wie möglich gehalten werden und auf spezifische Aufgaben fokusieren.
 
 ## If Bedingungen nur zu Beginn einer Methode
 
@@ -140,8 +140,8 @@ If-Bedingungen sollten möglichst nur zu Beginn einer Methode verwendet werden, 
 
 ### Problem
 
-Wenn If-Bedingungen über den Code verteilt werden, kann es schwieriger sein, den Überblick zu behalten und die Absichten des Codes zu verstehe.
-Zudem können mehrere If-Statements in einer Methode zu komplexer Logik führen und zu schwer verständlichem Code führe.
+Wenn If-Bedingungen über den Code verteilt werden, kann es schwieriger sein, den Überblick zu behalten und die Absichten des Codes zu verstehen.
+Zudem können mehrere If-Statements in einer Methode zu komplexer Logik führen und zu schwer verständlichem Code führen.
 Dies erschwert auch die Testbarkeit des Codes, da jedes If-Statement einen neuen Testpfad erfordert und es schwierig werden kann, alle möglichen Pfade zu testen.
 
 ### Beispielcode
@@ -199,14 +199,14 @@ public void calculatePrice(boolean isPremiumUser) {
 
 ### Nachteile
 
-- Es kann vorkommen, dass in manchen Fällen eine If-Bedingung innerhalb einer Methode verwendet werden muss, um eine bestimmte Funktionalität zu erreiche.
+- Es kann vorkommen, dass in manchen Fällen eine If-Bedingung innerhalb einer Methode verwendet werden muss, um eine bestimmte Funktionalität zu erreichen.
 In solchen Fällen sollte man jedoch darauf achten, dass die Bedingung so einfach und klar wie möglich formuliert wird.
 
 ### Ausnahmen
 
-Es gibt Situationen, in denen es notwendig sein kann, If-Bedingungen innerhalb einer Methode zu verwende.
-Zum Beispiel, wenn die Methode eine Schnittstelle implementiert, die eine bestimmte Signatur erforder.
-In solchen Fällen sollte man jedoch darauf achten, dass die Bedingungen so einfach und klar wie möglich formuliert werden und die Methode nicht zu komplex wir.
+Es gibt Situationen, in denen es notwendig sein kann, If-Bedingungen innerhalb einer Methode zu verwenden.
+Zum Beispiel, wenn die Methode eine Schnittstelle implementiert, die eine bestimmte Signatur erfordern.
+In solchen Fällen sollte man jedoch darauf achten, dass die Bedingungen so einfach und klar wie möglich formuliert werden und die Methode nicht zu komplex wird.
 Es ist auch möglich, eine abstrakte Klasse oder ein Interface zu erstellen, das die Funktionalität aufteilt und eine bessere Lesbarkeit und Testbarkeit ermöglicht.
 
 ## Verwendung von Exceptions
@@ -215,7 +215,7 @@ Exceptions sollten in Java nur für unerwartete Situationen verwendet werden, um
 
 ### Problem
 
-Wenn Exceptions unangemessen verwendet werden, kann dies zu schlechter Leistung, inkonsistentem Verhalten und schwer zu findenden Fehlern führe.
+Wenn Exceptions unangemessen verwendet werden, kann dies zu schlechter Leistung, inkonsistentem Verhalten und schwer zu findenden Fehlern führen.
 Eine übermäßige Verwendung von Exceptions kann auch die Lesbarkeit des Codes beeinträchtigen und dazu führen, dass der Code schwer verständlich ist.
 
 ### Beispielcode
@@ -271,13 +271,13 @@ public void calculatePrice(int quantity) throws InvalidQuantityException {
 
 ## Exceptions dürfen nur abgefangen und in speziellere Exceptions wieder geworfen werden
 
-Exceptions sollten in speziellere Exceptions umgewandelt und abgefangen werden, um sie an höhere Ebenen weiterzugebe.
-Dies erleichtert das Debugging, da der Fehlersachverhalt über den Exception-Typ deutlich gemacht wir.
+Exceptions sollten in speziellere Exceptions umgewandelt und abgefangen werden, um sie an höhere Ebenen weiterzugeben.
+Dies erleichtert das Debugging, da der Fehlersachverhalt über den Exception-Typ deutlich gemacht wird.
 Die aufrufende Methode kann dann den speziellen Fehler behandeln, ohne den Fehlertext der Exception vergleichen zu müssen.
 
 ### Problem
 
-Die Fehlersuche kann erschwert werden, wenn Exceptions bei einem Fehler geworfen werden und die Namen dieser Exceptions nichts mit dem Fehler zu tun habe.
+Die Fehlersuche kann erschwert werden, wenn Exceptions bei einem Fehler geworfen werden und die Namen dieser Exceptions nichts mit dem Fehler zu tun haben.
 In solchen Fällen kann das Exception-Handling schwierig sein und die Identifizierung der Ursache des Fehlers erschweren.
 
 ### Beispielcode
@@ -302,8 +302,8 @@ public void readFromFile(String filePath) throws Exception {
 
 ### Refactoring
 
-Um Exceptions richtig zu behandeln, sollten sie entweder in der aktuellen Methode behandelt oder an eine höhere Ebene weitergegeben werde.
-Die Behandlung von Exceptions sollte klar und verständlich sein und nicht einfach nur Fehlermeldungen ausgebe.
+Um Exceptions richtig zu behandeln, sollten sie entweder in der aktuellen Methode behandelt oder an eine höhere Ebene weitergegeben werden.
+Die Behandlung von Exceptions sollte klar und verständlich sein und nicht einfach nur Fehlermeldungen ausgeben.
 Exceptions sollten in speziellere Exceptions umgewandelt werden, um den Fehlersachverhalt über den Exception-Typ deutlich zu machen und die aufrufende Methode es zu ermöglichen diesen speziellen Fehler behandeln zu können.
 
 ```java
@@ -326,7 +326,7 @@ public void readFromFile(String filePath) throws IOException {
 
 ### Ausnahmen
 
-Es gibt Situationen, in denen es nicht sinnvoll ist, Exceptions in speziellere Exceptions umzuwandeln, z.B. wenn es darum geht, Fehler zu ignorieren oder nicht weiterzugebe.
+Es gibt Situationen, in denen es nicht sinnvoll ist, Exceptions in speziellere Exceptions umzuwandeln, z.B. wenn es darum geht, Fehler zu ignorieren oder nicht weiterzugeben.
 In solchen Fällen sollte jedoch darauf geachtet werden, dass dies dokumentiert und klar verständlich ist.
 
 ## Exceptions dürfen nur geloggt werden, wenn sie nicht geworfen werden
@@ -335,7 +335,7 @@ Exceptions sollten nur dann geloggt werden, wenn sie nicht an höhere Ebenen wei
 
 ### Problem
 
-Das Loggen von Exceptions in Methoden, in denen sie bereits abgefangen werden, führt zu einer unnötigen Vermehrung von Exception-Stacktraces in den Log.
+Das Loggen von Exceptions in Methoden, in denen sie bereits abgefangen werden, führt zu einer unnötigen Vermehrung von Exception-Stacktraces in den Logs.
 Dies erschwert das Lesen der Logs und kann zu einer höheren Belastung des Speichers führen.
 
 ### Beispielcode
@@ -360,7 +360,7 @@ public void readFromFile(String filePath) {
 
 ### Refactoring
 
-Um Exceptions richtig zu behandeln, sollten sie entweder in der aktuellen Methode behandelt oder an eine höhere Ebene weitergegeben werde.
+Um Exceptions richtig zu behandeln, sollten sie entweder in der aktuellen Methode behandelt oder an eine höhere Ebene weitergegeben werden.
 Nur im ersten Fall sollte ein Logging ausgeben werden.
 
 ```java
@@ -384,7 +384,7 @@ public void readFromFile(String filePath) throws IOException {
 
 ### Ausnahmen
 
-In manchen Fällen für Debugging kann es sinnvoll sein, Exceptions auszuloggen, bevor sie an höhere Ebenen weitergegeben werden, um mehr Informationen über den Fehler zu sammel.
+In manchen Fällen für Debugging kann es sinnvoll sein, Exceptions auszuloggen, bevor sie an höhere Ebenen weitergegeben werden, um mehr Informationen über den Fehler zu sammeln.
 In solchen Fällen sollte jedoch darauf geachtet werden, dass keine vertraulichen Informationen offengelegt werden und dass die Exception nicht einfach nur ignoriert wird.
 
 ## Attribute nur mit protected Sichtbarkeit versehen
@@ -419,14 +419,14 @@ Durch die Verwendung von `protected` Sichtbarkeit können Testfälle geschrieben
 
 ### Ausnahmen
 
-Es ist jedoch zu beachten, dass die Verwendung von `protected` Sichtbarkeit zu einer Verminderung der Abstraktion und Kapselung von Daten führen kan.
+Es ist jedoch zu beachten, dass die Verwendung von `protected` Sichtbarkeit zu einer Verminderung der Abstraktion und Kapselung von Daten führen kann.
 Es sollte nur dann `protected` Sichtbarkeit verwendet werden, wenn es wirklich notwendig ist, um die Testbarkeit zu erleichtern, und wenn es keine anderen Möglichkeiten gibt, die Testbarkeit der Klasse zu gewährleisten.
 
 ## Attribute komplexer Typen sollten nicht mit Getter und Setter veröffentlicht werden
 
 ### Problem
 
-Wenn Attribute komplexer Typen mit Getter- und Setter-Methoden veröffentlicht werden, kann dies zu unerwartetem Verhalten und schwerwiegenden Fehlern führe.
+Wenn Attribute komplexer Typen mit Getter- und Setter-Methoden veröffentlicht werden, kann dies zu unerwartetem Verhalten und schwerwiegenden Fehlern führen.
 Insbesondere kann es zu Inkonsistenzen bei der Verwendung von Referenzen auf dieselben Objekte kommen, die das Attribut referenzieren.
 
 ### Beispielcode
@@ -479,19 +479,19 @@ System.out.println(obj2.getList()); // Output: []
 
 ### Vorteile
 
-Indem die Verwendung von Getter- und Setter-Methoden für Attribute komplexer Typen vermieden wird, können Inkonsistenzen bei der Verwendung von Referenzen auf dieselben Objekte verhindert werde.
+Indem die Verwendung von Getter- und Setter-Methoden für Attribute komplexer Typen vermieden wird, können Inkonsistenzen bei der Verwendung von Referenzen auf dieselben Objekte verhindert werden.
 Stattdessen sollten notwendige Methoden über das Parent-Objekt bereitgestellt werden, um sicherzustellen, dass das Attribut konsistent und korrekt verwendet wird.
 
 ### Ausnahmen
 
-Es kann jedoch Fälle geben, in denen die Verwendung von Getter- und Setter-Methoden sinnvoll ist, z.B. wenn das Attribut nicht referenzierbare Objekte enthält oder wenn das Attribut geändert werden kann, ohne dass Inkonsistenzen entstehe.
+Es kann jedoch Fälle geben, in denen die Verwendung von Getter- und Setter-Methoden sinnvoll ist, z.B. wenn das Attribut nicht referenzierbare Objekte enthält oder wenn das Attribut geändert werden kann, ohne dass Inkonsistenzen entstehen.
 Es ist daher wichtig, die Verwendung von Getter- und Setter-Methoden sorgfältig zu prüfen und nur dann zu verwenden, wenn es notwendig und sinnvoll ist.
 
 ## Stream-API verwenden
 
 ### Problem
 
-Die Verwendung von Schleifen und Iteratoren kann zu unleserlichem und unübersichtlichem Code führen, insbesondere wenn komplexe Filter- oder Transformationsoperationen durchgeführt werden müsse.
+Die Verwendung von Schleifen und Iteratoren kann zu unleserlichem und unübersichtlichem Code führen, insbesondere wenn komplexe Filter- oder Transformationsoperationen durchgeführt werden müssen.
 Darüber hinaus kann es zu Fehlern kommen, wenn Schleifen und Iteratoren nicht korrekt implementiert oder angewendet werden.
 
 ### Beispielcode
@@ -524,9 +524,9 @@ System.out.println(sum); // Output: 6
 
 ### Vorteile
 
-Die Verwendung der Stream-API kann zu einem einfacheren, übersichtlicheren und fehlersichereren Code führe.
-Durch die Verwendung von Stream-Operationen wie `filter`, `map`, `reduce`, `distinct` us.
-können komplexe Filter- und Transformationsoperationen auf eine klare und konsistente Weise durchgeführt werde.
+Die Verwendung der Stream-API kann zu einem einfacheren, übersichtlicheren und fehlersichereren Code führen.
+Durch die Verwendung von Stream-Operationen wie `filter`, `map`, `reduce`, `distinct` usw.
+können komplexe Filter- und Transformationsoperationen auf eine klare und konsistente Weise durchgeführt werden.
 Darüber hinaus kann die Stream-API auch Parallelverarbeitung unterstützen, um die Leistung von Multi-Core-Systemen voll auszuschöpfen.
 
 ### Nachteile
@@ -540,14 +540,14 @@ Darüber hinaus kann die Stream-API auch Parallelverarbeitung unterstützen, um 
 ### Ausnahmen
 
 Es kann jedoch Fälle geben, in denen die Verwendung von Schleifen und Iteratoren sinnvoller ist,
-z.B. wenn es sich um eine einfache Iteration ohne komplexe Filter- oder Transformationsoperationen handelt oder wenn es notwendig ist, auf Elemente in einer bestimmten Reihenfolge zuzugreife.
+z.B. wenn es sich um eine einfache Iteration ohne komplexe Filter- oder Transformationsoperationen handelt oder wenn es notwendig ist, auf Elemente in einer bestimmten Reihenfolge zuzugreifen.
 Es ist daher wichtig, die Verwendung von Stream-Operationen sorgfältig zu prüfen und nur dann zu verwenden, wenn es notwendig und sinnvoll ist.
 
 ## JavaDoc-Kommentierung im Code
 
 ### Problem
 
-Die Dokumentation des Codes ist eine wichtige Komponente, um die Lesbarkeit und Wartbarkeit des Codes zu verbesser.
+Die Dokumentation des Codes ist eine wichtige Komponente, um die Lesbarkeit und Wartbarkeit des Codes zu verbessern.
 Insbesondere in großen Codeprojekten kann es schwierig sein, den Zweck und die Verwendung von Klassen, Methoden und Variablen zu verstehen.
 
 ### Beispielcode
@@ -594,24 +594,24 @@ public class Book {
 ### Refactoring
 
 JavaDoc ist eine Möglichkeit, um den Code zu dokumentieren und seine Lesbarkeit und Wartbarkeit zu verbesser.
-JavaDoc-Kommentare können verwendet werden, um den Zweck und die Verwendung von Klassen, Methoden und Variablen zu erkläre.
+JavaDoc-Kommentare können verwendet werden, um den Zweck und die Verwendung von Klassen, Methoden und Variablen zu erklären.
 Durch das Hinzufügen von JavaDoc-Kommentaren können andere Entwickler den Code besser verstehen und die Wartbarkeit des Codes verbessern.
 
 ### Vorteile
 
-Durch die Verwendung von JavaDoc-Kommentaren kann der Code besser dokumentiert werden, was dazu beiträgt, dass andere Entwickler den Code besser verstehen und die Wartbarkeit des Codes verbessern könne.
+Durch die Verwendung von JavaDoc-Kommentaren kann der Code besser dokumentiert werden, was dazu beiträgt, dass andere Entwickler den Code besser verstehen und die Wartbarkeit des Codes verbessern können.
 JavaDoc-Kommentare können auch automatisch generiert werden, um API-Dokumentationen zu erstellen, die anderen Entwicklern die Verwendung von Bibliotheken und Frameworks erleichtern können.
 
 ### Ausnahmen
 
-Es gibt keine Ausnahmen von der Verwendung von JavaDoc, da es eine bewährte Methode ist, um den Code zu dokumentieren und seine Lesbarkeit und Wartbarkeit zu verbesser.
+Es gibt keine Ausnahmen von der Verwendung von JavaDoc, da es eine bewährte Methode ist, um den Code zu dokumentieren und seine Lesbarkeit und Wartbarkeit zu verbessern.
 Allerdings können JavaDoc-Kommentare zu einem höheren Aufwand führen, insbesondere in kleineren Codeprojekten oder in Projekten, die nur von einem einzigen Entwickler gewartet werden.
 
 ## JetBrains Annotations
 
 ### Problem
 
-Es kann schwierig sein, den Code auf Null-Referenzen und andere Probleme zu überprüfen, die während der Laufzeit auftreten könne.
+Es kann schwierig sein, den Code auf Null-Referenzen und andere Probleme zu überprüfen, die während der Laufzeit auftreten können.
 Außerdem können schlecht dokumentierte Methoden und Klassen zu Verwirrung und Fehlern führen.
 
 ### Beispielcode
@@ -627,8 +627,8 @@ public void foo(String s) {
 
 ### Refactoring
 
-Mit den Annotations von JetBrains können Entwickler Methoden und Klassen genau dokumentieren und auf Null-Referenzen und andere Probleme hinweise.
-Zum Beispiel kann die `@NotNull`-Annotation verwendet werden, um anzuzeigen, dass eine Variable, ein Parameter oder ein Rückgabewert einer Methode nicht null sein dar.
+Mit den Annotations von JetBrains können Entwickler Methoden und Klassen genau dokumentieren und auf Null-Referenzen und andere Probleme hinweisen.
+Zum Beispiel kann die `@NotNull`-Annotation verwendet werden, um anzuzeigen, dass eine Variable, ein Parameter oder ein Rückgabewert einer Methode nicht null sein darf.
 Die `@Nullable`-Annotation kann verwendet werden, um anzuzeigen, dass ein Parameter oder Rückgabewert einer Methode null sein kann.
 
 Andere mögliche [Annotations-Typen von Jetbrains](https://javadoc.io/doc/org.jetbrains/annotations/latest/index.html) sind:
@@ -839,10 +839,10 @@ public Response exampleMethod(
 
 ```
 
-In diesem Beispiel wird die Annotation `@Min(1)` und `@Max(10)` verwendet, um sicherzustellen, dass der `number`-Parameter zwischen 1 und 10 lieg.
+In diesem Beispiel wird die Annotation `@Min(1)` und `@Max(10)` verwendet, um sicherzustellen, dass der `number`-Parameter zwischen 1 und 10 liegt.
 Sollte dies nicht der Fall sein, wird ebenfalls ein 400-Fehler zurückgegeben.
 
-In diesem Beispiel gibt es wieder die beiden Pfadparameter `category` und `productId`. Der `category`-Parameter muss entweder "books", "electronics" oder "clothing" sei.
+In diesem Beispiel gibt es wieder die beiden Pfadparameter `category` und `productId`. Der `category`-Parameter muss entweder "books", "electronics" oder "clothing" sein.
 Der `productId`-Parameter muss eine ganze Zahl sein.
 
 ### Vorteile
@@ -867,9 +867,9 @@ In einigen Fällen kann jedoch eine weniger strenge Überprüfung der Eingaben e
 
 ### Problem
 
-In Java können Variablen, Attribute und Parameter mit dem Schlüsselwort `final` als unveränderlich deklariert werde.
-Trotzdem wird in vielen Fällen darauf verzichtet, `final` zu verwende.
-Dies kann dazu führen, dass sich der Wert von Variablen, Attributen oder Parametern unerwartet ändert und dadurch unerwünschte Nebeneffekte auftreten könne.
+In Java können Variablen, Attribute und Parameter mit dem Schlüsselwort `final` als unveränderlich deklariert werden.
+Trotzdem wird in vielen Fällen darauf verzichtet, `final` zu verwenden.
+Dies kann dazu führen, dass sich der Wert von Variablen, Attributen oder Parametern unerwartet ändert und dadurch unerwünschte Nebeneffekte auftreten können.
 Dadurch wird die Lesbarkeit und Nachvollziehbarkeit des Codes erschwert.
 
 ### Beispielcode
@@ -926,7 +926,7 @@ public void calculateTotalPrice(double basePrice, double discountRate, int quant
 
 ### Refactoring
 
-Alle Variablen, Attribute und Parameter sollten mit `final` deklariert werden, um sie unveränderlich zu mache.
+Alle Variablen, Attribute und Parameter sollten mit `final` deklariert werden, um sie unveränderlich zu machen.
 Der Refactoring-Schritt besteht darin, alle Stellen im Code zu finden, an denen eine Variable, ein Attribut oder ein Parameter verändert wird, und das `final`-Schlüsselwort hinzuzufügen.
 Variablen und Attribute, die mit Absicht nicht-final sind, müssen mit `/*nonfinal*/` kommentiert werden.
 
@@ -980,7 +980,7 @@ public void calculateTotalPrice(final double basePrice, final double discountRat
 
 ### Ausnahmen
 
-- In manchen Fällen kann es sinnvoll sein, Variablen, Attribute oder Parameter nicht als `final` zu deklarieren, wenn sich der Wert häufig ändern muss oder wenn es aus anderen Gründen sinnvoll erschein.
+- In manchen Fällen kann es sinnvoll sein, Variablen, Attribute oder Parameter nicht als `final` zu deklarieren, wenn sich der Wert häufig ändern muss oder wenn es aus anderen Gründen sinnvoll erscheinen.
 In diesen Fällen muss mit `/*nonfinal*/` kommentiert werden.
 
 ## Guard Pattern in Java
