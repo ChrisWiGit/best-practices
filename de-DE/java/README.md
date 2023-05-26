@@ -1187,13 +1187,6 @@ private void saveUser(User user) {
 
 ### Vorteile
 
-- Verbesserte Lesbarkeit und Verständlichkeit des Codes durch kleinere und fokussierte Methoden/Funktionen
-- Einfachere Wartbarkeit und Testbarkeit durch klar abgegrenzte Verantwortlichkeiten
-- Bessere Übersichtlichkeit und Strukturierung des Codes
-- Bessere Testbarkeit des Codes, da kleinere Methoden leichter isoliert und getestet werden können
-
-Kleine Methoden haben den Vorteil, dass sie leichter testbar und wartbar sind. Hier sind einige Gründe dafür:
-
 1. **Bessere Isolierung**: Kleine Methoden behandeln normalerweise nur eine spezifische Aufgabe oder Verantwortlichkeit. Dadurch können sie isoliert und unabhängig von anderen Teilen des Codes getestet werden. Durch die Fokussierung auf eine spezifische Funktion können Tests effektiver und einfacher geschrieben werden.
 
 2. **Lesbarkeit**: Kleine Methoden sind in der Regel einfacher zu verstehen, da sie nur eine begrenzte Anzahl von Zeilen umfassen und sich auf eine bestimmte Funktionalität konzentrieren. Dadurch wird die Lesbarkeit des Codes verbessert und es ist einfacher, den Zweck und das Verhalten der Methode zu erfassen.
