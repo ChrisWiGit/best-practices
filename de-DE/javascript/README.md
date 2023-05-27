@@ -1,7 +1,5 @@
 # JavaScript Best Practises und Design Patterns
 
-<!-- TOC -->
-
 - [JavaScript Best Practises und Design Patterns](#javascript-best-practises-und-design-patterns)
   - [Allgemein](#allgemein)
   - [Optionaler Operator ?. / Optional Chaining verwenden](#optionaler-operator---optional-chaining-verwenden)
@@ -24,29 +22,31 @@
 
 ## Allgemein
 
-1. **Folgen des DRY-Prinzips (Don't Repeat Yourself)**: Wird festgestellt, dass derselbe Code an mehreren Stellen verwendet wird, sollte in Betracht gezogen werden, diesen Code in eine Funktion oder ein Modul zu extrahieren und es dann jedes Mal zu verwenden, wenn es benötigt wird.
+1. **Folgen des KISS-Prinzips (Keep it simple and stupid)**: Die Entwicklung von Software sollte nicht der Selbstverwirklichung des Entwicklers dienen, sondern der Lösung eines Problems. Daher sollte Architektur, Code und Dokumentation so einfach wie möglich gehalten werden. Komplexe Lösungen sollten vermieden werden, wenn einfachere Lösungen möglich sind.
 
-2. **Konsistente Benennung von Variablen und Funktionen**: Es sollte sichergestellt werden, dass die verwendeten Namen aussagekräftig sind und den Zweck des Codes genau beschreiben. Die Benennung sollte auch konsistent sein.
+2. **Folgen des DRY-Prinzips (Don't Repeat Yourself)**: Wird festgestellt, dass derselbe Code an mehreren Stellen verwendet wird, sollte in Betracht gezogen werden, diesen Code in eine Funktion oder ein Modul zu extrahieren und es dann jedes Mal zu verwenden, wenn es benötigt wird.
 
-3. **Anwendung von ES6 Features**: Mit ES6 stehen viele neue Möglichkeiten zur Verfügung, um den Code zu verbessern. Beispielsweise könnten Pfeilfunktionen, Template-Strings, Default-Parameter, Rest- und Spread-Operator, Destructuring-Zuweisungen, `const` und `let` anstelle von `var` für eine bessere Kontrolle des Scopings, Klassen, Module, Promises und Iteratoren verwendet werden, um den Code kürzer und leichter lesbar zu machen.
+3. **Konsistente Benennung von Variablen und Funktionen**: Es sollte sichergestellt werden, dass die verwendeten Namen aussagekräftig sind und den Zweck des Codes genau beschreiben. Die Benennung sollte auch konsistent sein.
 
-4. **Vermeidung von Callback-Hölle**: Verschachtelte Callbacks sollten vermieden werden, da sie den Code schwer lesbar und wartbar machen. Promises oder `async/await` können verwendet werden, um den asynchronen Code besser handhaben zu können.
+4. **Anwendung von ES6 Features**: Mit ES6 stehen viele neue Möglichkeiten zur Verfügung, um den Code zu verbessern. Beispielsweise könnten Pfeilfunktionen, Template-Strings, Default-Parameter, Rest- und Spread-Operator, Destructuring-Zuweisungen, `const` und `let` anstelle von `var` für eine bessere Kontrolle des Scopings, Klassen, Module, Promises und Iteratoren verwendet werden, um den Code kürzer und leichter lesbar zu machen.
 
-5. **Einsatz von Linter und Formatter**: Tools wie ESLint und Prettier können dabei helfen, den Code konsistent und fehlerfrei zu halten.
+5. **Vermeidung von Callback-Hölle**: Verschachtelte Callbacks sollten vermieden werden, da sie den Code schwer lesbar und wartbar machen. Promises oder `async/await` können verwendet werden, um den asynchronen Code besser handhaben zu können.
 
-6. **Schreiben von Unit-Tests**: Guter refaktorierter Code sollte immer von Tests begleitet werden. Sie helfen dabei, sicherzustellen, dass der Code nach dem Refactoring immer noch wie erwartet funktioniert.
+6. **Einsatz von Linter und Formatter**: Tools wie ESLint und Prettier können dabei helfen, den Code konsistent und fehlerfrei zu halten.
 
-7. **Anwendung Modulare Architektur**: Der Code sollte in kleinere, wiederverwendbare Module aufgeteilt werden. Dies erhöht die Lesbarkeit und erleichtert die Wartung und das Testen.
+7. **Schreiben von Unit-Tests**: Guter refaktorierter Code sollte immer von Tests begleitet werden. Sie helfen dabei, sicherzustellen, dass der Code nach dem Refactoring immer noch wie erwartet funktioniert.
 
-8. **Selbsterklärender Code**: Kommentare sollten vermieden werden, wo der Code selbst klar sein kann. Guter Code sollte größtenteils selbsterklärend sein.
+8. **Anwendung Modulare Architektur**: Der Code sollte in kleinere, wiederverwendbare Module aufgeteilt werden. Dies erhöht die Lesbarkeit und erleichtert die Wartung und das Testen.
 
-9. **Anwendung des SOLID-Prinzips**: SOLID ist ein Akronym für fünf Prinzipien des objektorientierten Designs und der Programmierung, die dazu beitragen, dass der Code sauber, robust und wartbar bleibt.
+9.  **Selbsterklärender Code**: Kommentare sollten vermieden werden, wo der Code selbst klar sein kann. Guter Code sollte größtenteils selbsterklärend sein.
 
-10. **Performance-Optimierungen**: Auf teure Operationen wie unnötige DOM-Manipulationen oder ineffiziente Schleifen sollte geachtet werden. Performance-Tools wie die Chrome DevTools können genutzt werden, um Flaschenhälse zu identifizieren und zu beheben.
+10. **Anwendung des SOLID-Prinzips**: SOLID ist ein Akronym für fünf Prinzipien des objektorientierten Designs und der Programmierung, die dazu beitragen, dass der Code sauber, robust und wartbar bleibt.
 
-11. **Anwendung Funktionale Programmierkonzepte**: Funktionale Programmierung kann dazu beitragen, dass der Code besser strukturiert und leichter zu testen ist. Konzepte wie Unveränderlichkeit (Immutability), reine Funktionen und höherwertige Funktionen (Higher Order Functions) sind besonders nützlich.
+11. **Performance-Optimierungen**: Auf teure Operationen wie unnötige DOM-Manipulationen oder ineffiziente Schleifen sollte geachtet werden. Performance-Tools wie die Chrome DevTools können genutzt werden, um Flaschenhälse zu identifizieren und zu beheben.
 
-12. **Fehlerbehandlung**: Es sollte sichergestellt werden, dass der Code ordnungsgemäß mit Fehlern umgeht. Dies könnte beinhalten, dass versucht wird, Fehler frühzeitig zu werfen, anstatt sie zu ignorieren, und dass `try/catch`-Blöcke verwendet werden, um Fehler effektiv zu behandeln.
+12. **Anwendung Funktionale Programmierkonzepte**: Funktionale Programmierung kann dazu beitragen, dass der Code besser strukturiert und leichter zu testen ist. Konzepte wie Unveränderlichkeit (Immutability), reine Funktionen und höherwertige Funktionen (Higher Order Functions) sind besonders nützlich.
+
+13. **Fehlerbehandlung**: Es sollte sichergestellt werden, dass der Code ordnungsgemäß mit Fehlern umgeht. Dies könnte beinhalten, dass versucht wird, Fehler frühzeitig zu werfen, anstatt sie zu ignorieren, und dass `try/catch`-Blöcke verwendet werden, um Fehler effektiv zu behandeln.
 
 ## Optionaler Operator ?. / Optional Chaining verwenden
 
@@ -78,6 +78,7 @@ if (a && a.b && a.b.e && a.b.e[0] && a.b.e[0].f != null) {
 ### Refactoring
 
 Um den Code übersichtlicher und robuster zu gestalten, kann der optionale Operator `?.` (Optional Chaining) verwendet werden. Dieser Operator prüft automatisch, ob der vorherige Schlüssel existiert, und greift nur dann auf den nächsten Schlüssel zu, wenn er vorhanden ist.
+Sollte ein Schlüssel nicht existieren, wird keine weitere Aktion ausgeführt und das Ergebnis ist `undefined`.
 
 ```javascript
 // Pfad zur Methode könnte nicht existieren
@@ -92,6 +93,10 @@ anotherObject.myMethod?.();
 anotherObject?.["field"];
 
 if (myNullValue == null) {
+    // Code ausführen
+}
+
+if (myObject?.myKey?.myMethod()) {
     // Code ausführen
 }
 
@@ -113,10 +118,6 @@ console.log('Defined', a.b.e[0]?.f == null);
 - Keine direkte Unterstützung in älteren JavaScript-Versionen (vor ECMAScript 2020)
 - Verwendung des optionalen Operators kann dazu führen, dass Fehler später erkannt werden, da `undefined`-Werte nicht sofort als solche erkannt werden
 
-### Ausnahmen
-
-Es gibt keine spezifischen Ausnahmen für die Verwendung des optionalen Operators. Es sollte jedoch beachtet werden, dass ältere JavaScript-Umgebungen möglicherweise keine Unterstützung für den optionalen Operator bieten.
-
 ### Weiterführende Informationen
 
 Weitere Informationen zur Verwendung des optionalen Operators `?.` oder Optional Chaining in JavaScript findest du in der [Mozilla Developer Network (MDN) Dokumentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining). Dort werden die Funktionsweise und die verschiedenen Anwendungsfälle ausführlich erläutert.
@@ -137,13 +138,14 @@ if (!myObject) {
 }
 
 if (myObject === null || myObject === undefined || typeof myObject === 'undefined') {
-    // ...
+    // myObject === null oder
+    // myObject === undefined
 }
 ```
 
 ### Refactoring
 
-Um sicherzustellen, dass nur `null` oder `undefined` erkannt werden und andere falsy-Werte ausgeschlossen werden, kann die folgende Überprüfung verwendet werden:
+Um sicherzustellen, dass **nur** `null` oder `undefined` erkannt werden und andere falsy-Werte ausgeschlossen werden, kann die folgende Überprüfung verwendet werden:
 
 ```javascript
 if (myObject == null) {
@@ -152,10 +154,17 @@ if (myObject == null) {
 }
 ```
 
+Die VErwendung von zwei Gleichheitszeichen `==` anstelle von drei `===` ist hierbei wichtig, da so `undefined` und `null` erkannten werden.
+
 ### Vorteile
 
 - Korrekte Überprüfung auf `null` oder `undefined`
 - Vermeidung von unerwarteten Fehlern durch falsche Erkennung von falsy-Werten
+
+### Nachteile
+
+- Werte wie NaN werden nicht erkannt
+- ESLint muss entsprechend konfiguriert werden, um die Verwendung von `==` bei null Vergleich zu erlauben. Dies ist möglich, indem die Regel `eqeqeq` auf [smart](https://eslint.org/docs/latest/rules/eqeqeq#smart) umgestellt wird.
 
 ## Object destructuring / Object Eigenschaften bekommen
 
@@ -211,7 +220,10 @@ getData(function(result) {
 
 ### Refactoring
 
-Dank `async` und `await` kann asynchroner Code lesbarer und besser handhabbar gemacht werden. Durch das Hinzufügen des `async`-Schlüsselworts zu einer Funktion wird diese automatisch zu einer asynchronen Funktion. Das `await`-Schlüsselwort wird verwendet, um auf das Ergebnis einer asynchronen Operation zu warten. Fehlerbehandlung wird durch `try/catch` durchgeführt.
+Dank `async` und `await` kann asynchroner Code lesbarer und besser handhabbar gemacht werden.
+Durch das Hinzufügen des `async`-Schlüsselworts zu einer Funktion wird diese automatisch zu einer asynchronen Funktion.
+Das `await`-Schlüsselwort wird verwendet, um auf das Ergebnis einer asynchronen Operation zu warten.
+Fehlerbehandlung wird durch `try/catch` durchgeführt.
 
 ```javascript
 async function myAsyncFunction() {
@@ -237,11 +249,6 @@ async function myAsyncFunction() {
 ### Nachteile
 
 - Verwendung von `async` und `await` erfordert ECMAScript 2017 (ES8) oder höher
-- In manchen Fällen kann es zu einer Blockierung des Hauptthreads kommen, wenn `await` in nicht-asynchronen Funktionen verwendet wird
-
-### Ausnahmen
-
-Die Verwendung von `async` und `await` ist nicht in allen Situationen erforderlich oder sinnvoll. Insbesondere bei einfachen und schnellen synchronen Operationen ist der Einsatz von `async` und `await` möglicherweise überflüssig.
 
 ### Weiterführende Literatur/Links
 
@@ -269,7 +276,7 @@ Das Guard Pattern ermöglicht es uns, Bedingungsprüfungen klarer und lesbarer z
 
 ```javascript
 function processInput(input) {
-    if (input === null || input === undefined || input === '') {
+    if (input == null || input === '') {
         return;
     }
 
@@ -283,10 +290,6 @@ function processInput(input) {
 - Reduzierung der Verschachtelung von Bedingungsprüfungen
 - Einfache Erweiterbarkeit und Wartbarkeit des Codes
 
-### Ausnahmen
-
-Das Guard Pattern sollte nicht blindlings auf jede Bedingungsprüfung angewendet werden. In einigen Fällen kann es sinnvoll sein, spezifische Fehlermeldungen zu generieren oder detailliertere Prüfungen durchzuführen, bevor der Code beendet wird.
-
 ### Weiterführende Literatur/Links
 
 - [Guard Clause Pattern - Refactoring.Guru](https://refactoring.guru/smells/guard-clauses)
@@ -295,6 +298,7 @@ Das Guard Pattern sollte nicht blindlings auf jede Bedingungsprüfung angewendet
 
 Positiv formulierte If-Bedingungen und die Auslagerung komplexer Bedingungen in temporäre Variablen verbessern die Lesbarkeit und Wartbarkeit des Codes.
 
+> Die Aufsplittung von If-Bedingungen ist sehr abhängig vom Verständnis des Entwicklers und sollte mit Sinn und Verstand eingesetzt werden.
 ### Problem
 
 Komplexe Bedingungen in If-Anweisungen können den Code schwer verständlich machen, insbesondere wenn sie negativ formuliert sind. Lange und verschachtelte Bedingungen erschweren die Lesbarkeit und können zu Fehlern führen.
@@ -470,19 +474,21 @@ function saveUser(user) {
 
 Kleine Methoden haben den Vorteil, dass sie leichter testbar und wartbar sind. Hier sind einige Gründe dafür:
 
-1. **Bessere Isolierung**: Kleine Methoden behandeln normalerweise nur eine spezifische Aufgabe oder Verantwortlichkeit. Dadurch können sie isoliert und unabhängig von anderen Teilen des Codes getestet werden. Durch die Fokussierung auf eine spezifische Funktion können Tests effektiver und einfacher geschrieben werden.
+1. **KISS-Prinzip**: Das KISS-Prinzip kann leichter eingehalten werden, wenn Methoden und Funktionen auf eine begrenzte Anzahl von Zeilen beschränkt sind. Der Entwickler kommt nicht dazu überkomplexe Methoden zu schreiben, da er sich an die Zeilenbeschränkung halten muss.
 
-2. **Lesbarkeit**: Kleine Methoden sind in der Regel einfacher zu verstehen, da sie nur eine begrenzte Anzahl von Zeilen umfassen und sich auf eine bestimmte Funktionalität konzentrieren. Dadurch wird die Lesbarkeit des Codes verbessert und es ist einfacher, den Zweck und das Verhalten der Methode zu erfassen.
+2. **Bessere Isolierung**: Kleine Methoden behandeln normalerweise nur eine spezifische Aufgabe oder Verantwortlichkeit. Dadurch können sie isoliert und unabhängig von anderen Teilen des Codes getestet werden. Durch die Fokussierung auf eine spezifische Funktion können Tests effektiver und einfacher geschrieben werden.
 
-3. **Wiederverwendbarkeit**: Kleine Methoden können leichter wiederverwendet werden. Da sie in der Regel spezifische Aufgaben erfüllen, können sie in verschiedenen Teilen des Codes wiederverwendet werden, wenn ähnliche Funktionalität benötigt wird. Dies fördert die Modularität und reduziert die Duplizierung von Code.
+3. **Lesbarkeit**: Kleine Methoden sind in der Regel einfacher zu verstehen, da sie nur eine begrenzte Anzahl von Zeilen umfassen und sich auf eine bestimmte Funktionalität konzentrieren. Dadurch wird die Lesbarkeit des Codes verbessert und es ist einfacher, den Zweck und das Verhalten der Methode zu erfassen.
 
-4. **Einfache Wartbarkeit**: Kleine Methoden sind einfacher zu warten, da sie in sich abgeschlossen sind und Änderungen an einer Methode weniger Auswirkungen auf andere Teile des Codes haben. Bei einem Fehler oder einer gewünschten Änderung ist es einfacher, den relevanten Code zu lokalisieren und anzupassen, ohne den gesamten Kontext berücksichtigen zu müssen.
+4. **Wiederverwendbarkeit**: Kleine Methoden können leichter wiederverwendet werden. Da sie in der Regel spezifische Aufgaben erfüllen, können sie in verschiedenen Teilen des Codes wiederverwendet werden, wenn ähnliche Funktionalität benötigt wird. Dies fördert die Modularität und reduziert die Duplizierung von Code.
 
-5. **Bessere Testabdeckung**: Durch die Aufteilung des Codes in kleine Methoden wird die Testabdeckung verbessert, da jede Methode spezifische Tests erhalten kann. Dadurch können verschiedene Szenarien und Randbedingungen gezielt getestet werden, um die Fehleranfälligkeit zu reduzieren.
+5. **Einfache Wartbarkeit**: Kleine Methoden sind einfacher zu warten, da sie in sich abgeschlossen sind und Änderungen an einer Methode weniger Auswirkungen auf andere Teile des Codes haben. Bei einem Fehler oder einer gewünschten Änderung ist es einfacher, den relevanten Code zu lokalisieren und anzupassen, ohne den gesamten Kontext berücksichtigen zu müssen.
 
-6. **Einfacheres Mocking**: Darüber hinaus ist das Mocking in Tests einfacher, wenn der Code in kleine Methoden aufgeteilt ist. Beim Schreiben von Unit-Tests ist es häufig erforderlich, externe Abhängigkeiten zu mocken oder zu fälschen, um den Fokus auf die zu testende Methode zu legen. Mit kleinen Methoden ist es einfacher, diese Abhängigkeiten zu identifizieren und zu isolieren, da sie in der Regel explizit als Parameter an die Methode übergeben werden. Das Mocking-Setup ist zudem kleiner und einfacher, weil aufgespaltete Methoden einfach diese Methoden mocken können, statt die fremde (externe) API, die darin verwendet wird.
+6. **Bessere Testabdeckung**: Durch die Aufteilung des Codes in kleine Methoden wird die Testabdeckung verbessert, da jede Methode spezifische Tests erhalten kann. Dadurch können verschiedene Szenarien und Randbedingungen gezielt getestet werden, um die Fehleranfälligkeit zu reduzieren.
 
-7. **Förderung des Single Responsibility Principle**: Kleine Methoden unterstützen das Single Responsibility Principle, das besagt, dass eine Methode oder Funktion nur eine einzige Verantwortlichkeit haben sollte. Durch die Aufteilung des Codes in kleine Methoden wird die Verantwortlichkeit klarer definiert und das Prinzip der klaren Trennung von Aufgaben eingehalten.
+7. **Einfacheres Mocking**: Darüber hinaus ist das Mocking in Tests einfacher, wenn der Code in kleine Methoden aufgeteilt ist. Beim Schreiben von Unit-Tests ist es häufig erforderlich, externe Abhängigkeiten zu mocken oder zu fälschen, um den Fokus auf die zu testende Methode zu legen. Mit kleinen Methoden ist es einfacher, diese Abhängigkeiten zu identifizieren und zu isolieren, da sie in der Regel explizit als Parameter an die Methode übergeben werden. Das Mocking-Setup ist zudem kleiner und einfacher, weil aufgespaltete Methoden einfach diese Methoden mocken können, statt die fremde (externe) API, die darin verwendet wird.
+
+8. **Förderung des Single Responsibility Principle**: Kleine Methoden unterstützen das Single Responsibility Principle, das besagt, dass eine Methode oder Funktion nur eine einzige Verantwortlichkeit haben sollte. Durch die Aufteilung des Codes in kleine Methoden wird die Verantwortlichkeit klarer definiert und das Prinzip der klaren Trennung von Aufgaben eingehalten.
 
 Die Verwendung kleiner Methoden verbessert die Qualität und Wartbarkeit des Codes, indem sie die Testbarkeit, Lesbarkeit, Wiederverwendbarkeit und Modularität fördern. Es ist jedoch wichtig, ein Gleichgewicht zu finden, um eine übermäßige Fragmentierung des Codes zu vermeiden und die Lesbarkeit nicht zu beeinträchtigen.
 
@@ -547,7 +553,7 @@ Die Verwendung von `Optional` in JavaScript ist eine Designentscheidung und kein
 
 - [Optional Chaining Operator - JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) (Alternatives Muster zur Behandlung von `null`- und `undefined`-Werten)
 
-### Code für Optional (Todo auslagern)
+### Code für Optional
 
 ```javascript
 
@@ -632,11 +638,13 @@ Optional.isOptional = function(optional) {
 
 ## Verwendung der npm-Bibliothek optional.js zur Rückgabe von Optional in JavaScript
 
-Es ist eine bewährte Praxis in JavaScript, die npm-Bibliothek optional.js zu verwenden, um die Rückgabe von Optional-Objekten anstelle von null oder anderen Fehlertypen zu ermöglichen. Durch die Verwendung von Optional-Objekten wird deutlich, dass eine Funktion möglicherweise keinen Wert zurückgibt und ermöglicht eine bessere Behandlung von optionalen Werten.
+Es ist einfach in JavaScript, die npm-Bibliothek optional.js zu verwenden, um die Rückgabe von Optional-Objekten anstelle von null oder anderen Fehlertypen zu ermöglichen.
+Durch die Verwendung von Optional-Objekten wird deutlich, dass eine Funktion möglicherweise keinen Wert zurückgibt und ermöglicht eine bessere Behandlung von optionalen Werten.
 
 ### Problem
 
-In JavaScript ist es üblich, dass Funktionen null, undefined oder andere Werte zurückgeben, um das Fehlen eines erwarteten Werts zu kennzeichnen. Dies kann zu Verwirrung und unerwartetem Verhalten führen, da der Rückgabewert möglicherweise nicht explizit auf das Fehlen des Werts überprüft wird.
+In JavaScript ist es üblich, dass Funktionen null, undefined oder andere Werte zurückgeben, um das Fehlen eines erwarteten Werts zu kennzeichnen.
+Dies kann zu Verwirrung und unerwartetem Verhalten führen, da der Rückgabewert möglicherweise nicht explizit auf das Fehlen des Werts überprüft wird.
 
 ```javascript
 function findUserById(id) {
@@ -681,7 +689,7 @@ if (userOptional.isPresent()) {
 ### Nachteile
 
 - Einführung einer zusätzlichen Abhängigkeit durch die Verwendung der optional.js-Bibliothek
-- Erhöhte Komplexität des Codes durch die Verwendung von Optional-Objekten
+- API Methoden, die optional.js-Bibliothek verwenden erfordern, dass Nutzer der API die optional.js-Bibliothek einbinden, kennen und verwenden müssen.
 
 ### Ausnahmen
 
@@ -748,10 +756,6 @@ function calculate(x) {
 - Reduzierung der Verschachtelung von Bedingungen
 - Vereinfachte Struktur und Fluss des Codes
 
-### Ausnahmen
-
-- Es kann Ausnahmen geben, in denen ein else-Block sinnvoll ist, um zusätzliche Logik auszuführen, die nicht direkt mit der Bedingung und dem Rückgabewert zusammenhängt.
-
 ### Weiterführende Literatur/Links
 
 - [Clean Code: A Handbook of Agile Software Craftsmanship](https://www.amazon.com/dp/0132350882)
@@ -759,11 +763,14 @@ function calculate(x) {
 
 ## Exceptions in JavaScript nicht einfach loggen und unverändert wieder werfen
 
-Exceptions sollten in JavaScript nicht einfach nur geloggt und unverändert wieder geworfen werden. Stattdessen ist es wichtig, Exceptions sinnvoll zu behandeln und angemessene Maßnahmen zu ergreifen.
+Exceptions sollten in JavaScript nicht einfach nur geloggt und unverändert wieder geworfen werden.
+Stattdessen ist es wichtig, Exceptions sinnvoll zu behandeln und angemessene Maßnahmen zu ergreifen.
+Entweder wird die Exception geloggt und behandelt oder in eine andere Form umgewandelt und geworfen.
 
 ### Problem
 
-Das einfache Loggen und unveränderte Werfen von Exceptions führt oft dazu, dass die eigentliche Ursache des Problems verschleiert wird. Es erschwert auch die Fehlerbehandlung und das Debugging des Codes.
+Das einfache Loggen und unveränderte Werfen von Exceptions führt oft dazu, dass die eigentliche Ursache des Problems verschleiert wird.
+Es erschwert auch die Fehlerbehandlung und das Debugging des Codes.
 
 ```javascript
 try {
@@ -805,11 +812,14 @@ In einigen Fällen kann es sinnvoll sein, Exceptions zu loggen und unverändert 
 
 ## Verwendung von `const` für alle Variablen in JavaScript und Kennzeichnung von Nicht-Konstanten
 
-Um unbeabsichtigtes Ändern von Variablen zu vermeiden, sollte in JavaScript das Schlüsselwort `const` für alle Variablen verwendet werden. In Fällen, in denen die Verwendung von `const` nicht möglich ist, sollte ein Kommentar mit dem Inhalt "nonconst" hinzugefügt werden.
+Um unbeabsichtigtes Ändern von Variablen zu vermeiden, sollte in JavaScript das Schlüsselwort `const` für alle Variablen verwendet werden.
+In Fällen, in denen die Verwendung von `const` nicht möglich ist, sollte ein Kommentar mit dem Inhalt "nonconst" hinzugefügt werden.
 
 ### Problem
 
 Die Verwendung von `const` sorgt dafür, dass Variablen nicht versehentlich geändert werden. Ohne die Verwendung von `const` besteht die Gefahr, dass Variablen unbeabsichtigt überschrieben werden.
+Dies kann dazu führen, dass sich der Wert von Variablen, Attributen oder Parametern unerwartet ändert und dadurch unerwünschte Nebeneffekte auftreten können. Dies passiert beispielsweise dann, wenn die Variable, das Attribut oder der Parameter in einem anderen Teil des Codes nachträglich und von einer anderen Person unerwartet geändert wird.
+Dadurch wird die Lesbarkeit und Nachvollziehbarkeit des Codes erschwert.
 
 ```javascript
 let name = "John";
@@ -843,7 +853,8 @@ count++;
 
 ### Ausnahmen
 
-Es gibt Situationen, in denen die Verwendung von `const` nicht möglich oder sinnvoll ist, z. B. bei Variablen, die sich ändern müssen. In solchen Fällen kann die Kennzeichnung mit einem Kommentar "nonconst" helfen, auf die Ausnahme hinzuweisen.
+Es gibt Situationen, in denen die Verwendung von `const` nicht möglich oder sinnvoll ist, z. B. bei Variablen, die sich ändern müssen oder in komplexen Legacy-Code.
+In solchen Fällen kann die Kennzeichnung mit einem Kommentar "nonconst" helfen, auf die Ausnahme hinzuweisen.
 
 ### Weiterführende Literatur/Links
 
@@ -856,7 +867,8 @@ Es ist eine bewährte Praxis in Java und JavaScript, dass Methoden/Funktionen, d
 
 ### Problem
 
-Das Zurückgeben von null als Ergebnis einer Methode/Funktion, die eine Liste, HashMap oder ein Array zurückgibt, kann zu NullPointerExceptions und unerwartetem Verhalten führen. Es erfordert zusätzliche Überprüfungen auf null und erhöht die Komplexität des Aufrufercodes.
+Das Zurückgeben von null als Ergebnis einer Methode/Funktion, die eine Liste, HashMap oder ein Array zurückgibt, kann zu Zugriffsfehlern (undefined) und unerwartetem Verhalten führen.
+Es erfordert zusätzliche Überprüfungen auf null und erhöht die Komplexität des Aufrufercodes.
 
 ```javascript
 getNames() {
@@ -869,7 +881,7 @@ getNames() {
 
 ### Refactoring
 
-Um NullPointerExceptions und unerwartetes Verhalten zu vermeiden, sollten Methoden/Funktionen stattdessen eine leere Liste, HashMap oder ein leeres Array zurückgeben.
+Um Zugriffsfehler und unerwartetes Verhalten zu vermeiden, sollten Methoden/Funktionen stattdessen ein leeres Objekt oder Array zurückgeben.
 
 > Alternativ kann auch der Optional-Operator `.?` verwendet werden. Siehe das [Kapitel dazu](#optionaler-operator---optional-chaining-verwenden).
 > Alternativ kann auch das [Optional-Klassen-Pattern](#verwendung-von-optional-in-javascript-funktionen) verwendet werden.
@@ -885,7 +897,7 @@ function getNames() {
 
 ### Vorteile
 
-- Vermeidung von NullPointerExceptions und unerwartetem Verhalten
+- Vermeidung von Zugriffsfehlern und unerwartetem Verhalten
 - Einfachere Handhabung und weniger Überprüfungen auf null im Aufrufercode
 - Verbesserte Robustheit und Stabilität des Codes
 
@@ -905,7 +917,8 @@ Es ist eine bewährte Praxis bei der Benennung von Methoden in JavaScript und Ja
 
 ### Problem
 
-Bei der Benennung von Methoden ist es wichtig, klare Hinweise auf die Synchronität und das Ergebnisverhalten der Methode zu geben. Unklare oder inkonsistente Benennung kann zu Missverständnissen und unerwartetem Verhalten führen.
+Bei der Benennung von Methoden ist es wichtig, klare Hinweise auf die Synchronität und das Ergebnisverhalten der Methode zu geben.
+Unklare oder inkonsistente Benennung kann zu Missverständnissen und unerwartetem Verhalten führen.
 
 ```javascript
 // Unklare Benennung ohne klare Angabe zur Synchronität und zum Ergebnisverhalten
@@ -945,7 +958,8 @@ async function fetchResource() {
 
 ### Ausnahmen
 
-Es kann Situationen geben, in denen die Verwendung von anderen Präfixen oder Benennungsmustern angemessen ist, abhängig von den spezifischen Anforderungen und Konventionen des Projekts. Es ist wichtig, einheitliche Benennungsstandards innerhalb des Projekts festzulegen und zu dokumentieren.
+Es kann Situationen geben, in denen die Verwendung von anderen Präfixen oder Benennungsmustern angemessen ist, abhängig von den spezifischen Anforderungen und Konventionen des Projekts.
+Es ist wichtig, einheitliche Benennungsstandards innerhalb des Projekts festzulegen und zu dokumentieren.
 
 ### Weiterführende Literatur/Links
 
@@ -953,8 +967,6 @@ Es kann Situationen geben, in denen die Verwendung von anderen Präfixen oder Be
 - [JavaScript Naming Conventions](https://www.robinwieruch.de/javascript-naming-conventions)
 
 ## Kurz-Übersicht weiterer Themen zur Ausgestaltung
-
-Natürlich! Hier sind 10 weitere Best Practices für die Programmierung mit JavaScript ES6:
 
 1. Verwende `let` und `const` anstelle von `var`, um Blockscope zu nutzen und unerwartete Seiteneffekte zu vermeiden.
 
@@ -973,5 +985,3 @@ Natürlich! Hier sind 10 weitere Best Practices für die Programmierung mit Java
 8. Nutze den `import`- und `export`-Mechanismus für die Modulorganisation in deinem Code.
 
 9. Verwende `Set` und `Map` für die Verwaltung eindeutiger Werte und Schlüssel-Wert-Paare.
-
-10. Beachte die Verwendung von Promises und den `async/await`-Ansatz für asynchrone Operationen, um Callback-Hell zu vermeiden und den Code besser lesbar zu machen.
