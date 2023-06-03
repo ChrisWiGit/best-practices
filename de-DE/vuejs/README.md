@@ -1,8 +1,8 @@
-# VueJs 2 Best Practises und Design Patterns
+# VueJs 2 Best Practices und Design Patterns
 
 <!-- TOC -->
 
-- [VueJs 2 Best Practises und Design Patterns](#vuejs-2-best-practises-und-design-patterns)
+- [VueJs 2 Best Practices und Design Patterns](#vuejs-2-best-practices-und-design-patterns)
   - [Allgemein](#allgemein)
   - [Vermeiden der Verwendung von v-if mit v-for-Elementen](#vermeiden-der-verwendung-von-v-if-mit-v-for-elementen)
   - [Verwenden von Computed-Property zur Filterung von Daten](#verwenden-von-computed-property-zur-filterung-von-daten)
@@ -429,7 +429,7 @@ Es gibt bestimmte Fälle, in denen das Scoping von Komponentenstilen möglicherw
 
 - [Vue.js Dokumentation - Komponentenstile](https://vuejs.org/v2/guide/components.html#Scoped-Styles)
 
-### Best Practise: Rufen Sie keine Methode in created und watch auf
+### Best Practice: Rufen Sie keine Methode in created und watch auf
 
 #### Problem
 
@@ -486,7 +486,7 @@ export default {
 
 #### Nachteile
 
-- Keine direkten Nachteile bei der Anwendung dieser Best Practise.
+- Keine direkten Nachteile bei der Anwendung dieser Best Practice.
 
 #### Ausnahmen
 
@@ -496,7 +496,7 @@ Es gibt Fälle, in denen ein Methodenaufruf in `created` oder `watch` erforderli
 
 - [Vue.js Dokumentation - Lifecycle-Hooks](https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram)
 
-### Best Practise: Template-Ausdrücke sollten nur einfache JavaScript-Ausdrücke enthalten
+### Best Practice: Template-Ausdrücke sollten nur einfache JavaScript-Ausdrücke enthalten
 
 #### Problem
 

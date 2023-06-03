@@ -1,7 +1,7 @@
-# Entwicklung - Best Practises
+# Entwicklung - Best Practices
 <!-- TOC -->
 
-- [Entwicklung - Best Practises](#entwicklung---best-practises)
+- [Entwicklung - Best Practices](#entwicklung---best-practices)
   - [Themen](#themen)
   - [Begriffsdefinition](#begriffsdefinition)
   - [Allgemeines Code-Refactoring](#allgemeines-code-refactoring)

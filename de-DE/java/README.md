@@ -1,6 +1,6 @@
-# Best Practises und Design Patterns
+# Best Practices und Design Patterns
 
-- [Best Practises und Design Patterns](#best-practises-und-design-patterns)
+- [Best Practices und Design Patterns](#best-practices-und-design-patterns)
   - [Allgemein](#allgemein)
   - [Linter verwenden](#linter-verwenden)
   - [Verwendung von Exceptions](#verwendung-von-exceptions)

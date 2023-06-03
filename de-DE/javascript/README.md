@@ -1,6 +1,6 @@
-# JavaScript Best Practises und Design Patterns
+# JavaScript Best Practices und Design Patterns
 
-- [JavaScript Best Practises und Design Patterns](#javascript-best-practises-und-design-patterns)
+- [JavaScript Best Practices und Design Patterns](#javascript-best-practices-und-design-patterns)
   - [Allgemein](#allgemein)
   - [Optionaler Operator ?. / Optional Chaining verwenden](#optionaler-operator---optional-chaining-verwenden)
   - [Auf null und undefined prüfen](#auf-null-und-undefined-prüfen)
