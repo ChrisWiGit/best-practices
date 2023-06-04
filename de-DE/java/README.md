@@ -2,7 +2,7 @@
 
 - [Best Practices und Design Patterns](#best-practices-und-design-patterns)
   - [Allgemein](#allgemein)
-  - [Linter verwenden](#linter-verwenden)
+  - [J001 Linter verwenden](#j001-linter-verwenden)
   - [Verwendung von Exceptions](#verwendung-von-exceptions)
   - [Exceptions dürfen nur abgefangen und in speziellere Exceptions wieder geworfen werden](#exceptions-dürfen-nur-abgefangen-und-in-speziellere-exceptions-wieder-geworfen-werden)
   - [Exceptions dürfen nur geloggt werden, wenn sie nicht geworfen werden](#exceptions-dürfen-nur-geloggt-werden-wenn-sie-nicht-geworfen-werden)
@@ -23,47 +23,48 @@
   - [Methoden/Funktionen sollten niemals null zurückgeben, sondern immer eine leere Liste, HashMap oder Array](#methodenfunktionen-sollten-niemals-null-zurückgeben-sondern-immer-eine-leere-liste-hashmap-oder-array)
   - [Verwendung von `computeIfAbsent` und `putIfAbsent` für HashMaps in Java](#verwendung-von-computeifabsent-und-putifabsent-für-hashmaps-in-java)
   - [Verwendung von `com.machinezoo.noexception` in Callbacks wie z.B. `forEach` in Java](#verwendung-von-commachinezoonoexception-in-callbacks-wie-zb-foreach-in-java)
+  - [Kapselung von API-Methoden zur Vereinfachung und besseren Testbarkeit](#kapselung-von-api-methoden-zur-vereinfachung-und-besseren-testbarkeit)
 
 ## Allgemein
 
-1. **Folgen des KISS-Prinzips (Keep it simple and stupid)**: Die Entwicklung von Software sollte nicht der Selbstverwirklichung des Entwicklers dienen, sondern der Lösung eines Problems. Daher sollte Architektur, Code und Dokumentation so einfach wie möglich gehalten werden. Komplexe Lösungen sollten vermieden werden, wenn einfachere Lösungen möglich sind.
+1. <a id="a001">A001</a> **Folgen des KISS-Prinzips (Keep it simple and stupid)**: Die Entwicklung von Software sollte nicht der Selbstverwirklichung des Entwicklers dienen, sondern der Lösung eines Problems. Daher sollte Architektur, Code und Dokumentation so einfach wie möglich gehalten werden. Komplexe Lösungen sollten vermieden werden, wenn einfachere Lösungen möglich sind.
 
-2. **Folgen des DRY-Prinzips (Don't Repeat Yourself)**: Wird festgestellt, dass derselbe Code an mehreren Stellen verwendet wird, sollte in Betracht gezogen werden, diesen Code in eine Methode oder eine Klasse zu extrahieren und es dann jedes Mal zu verwenden, wenn es benötigt wird.
+2. <a id="a002">A002</a> **Folgen des DRY-Prinzips (Don't Repeat Yourself)**: Wird festgestellt, dass derselbe Code an mehreren Stellen verwendet wird, sollte in Betracht gezogen werden, diesen Code in eine Methode oder eine Klasse zu extrahieren und es dann jedes Mal zu verwenden, wenn es benötigt wird.
 
-3. **Konsistente Benennung von Variablen und Methoden**: Es sollte sichergestellt werden, dass die verwendeten Namen aussagekräftig sind und den Zweck des Codes genau beschreiben. Die Benennung sollte auch konsistent sein.
+3. <a id="a003">A003</a> **Konsistente Benennung von Variablen und Methoden**: Es sollte sichergestellt werden, dass die verwendeten Namen aussagekräftig sind und den Zweck des Codes genau beschreiben. Die Benennung sollte auch konsistent sein.
 
-4. **Anwendung von neuen Java Features**: Mit Java 11 bis 17 stehen viele neue Möglichkeiten zur Verfügung, um den Code zu verbessern. Beispielsweise könnten Var-Typinferenz, Lambda-Ausdrücke und Streams, optionale Typen, neue Methoden für String-Verarbeitung, neue APIs für HTTP-Clients und vieles mehr verwendet werden, um den Code kürzer und leichter lesbar zu machen.
+4. <a id="a004">A004</a> **Anwendung von neuen Java Features**: Mit Java 11 bis 17 stehen viele neue Möglichkeiten zur Verfügung, um den Code zu verbessern. Beispielsweise könnten Var-Typinferenz, Lambda-Ausdrücke und Streams, optionale Typen, neue Methoden für String-Verarbeitung, neue APIs für HTTP-Clients und vieles mehr verwendet werden, um den Code kürzer und leichter lesbar zu machen.
 
-5. **Vermeidung von tief verschachteltem Code**: Tief verschachtelter Code sollte vermieden werden, da er den Code schwer lesbar und wartbar macht. Die Verwendung von flachen Hierarchien und kurzen Methoden kann die Lesbarkeit und Wartbarkeit erheblich verbessern.
+5. <a id="a005">A005</a> **Vermeidung von tief verschachteltem Code**: Tief verschachtelter Code sollte vermieden werden, da er den Code schwer lesbar und wartbar macht. Die Verwendung von flachen Hierarchien und kurzen Methoden kann die Lesbarkeit und Wartbarkeit erheblich verbessern.
 
-6. **Einsatz von Linter und Formatter**: Tools wie Checkstyle, PMD oder SpotBugs können dabei helfen, den Code konsistent und fehlerfrei zu halten.
+6. <a id="a006">A006</a> **Einsatz von Linter und Formatter**: Tools wie Checkstyle, PMD oder SpotBugs können dabei helfen, den Code konsistent und fehlerfrei zu halten.
 
-7. **Schreiben von Unit-Tests**: Guter refaktorierter Code sollte immer von Tests begleitet werden. Sie helfen dabei, sicherzustellen, dass der Code nach dem Refactoring immer noch wie erwartet funktioniert.
+7. <a id="a007">A007</a> **Schreiben von Unit-Tests**: Guter refaktorierter Code sollte immer von Tests begleitet werden. Sie helfen dabei, sicherzustellen, dass der Code nach dem Refactoring immer noch wie erwartet funktioniert.
 
-8. **Anwendung Modulare Architektur**: Der Code sollte in kleinere, wiederverwendbare Klassen und Pakete aufgeteilt werden. Dies erhöht die Lesbarkeit und erleichtert die Wartung und das Testen.
+8. <a id="a008">A008</a> **Anwendung Modulare Architektur**: Der Code sollte in kleinere, wiederverwendbare Klassen und Pakete aufgeteilt werden. Dies erhöht die Lesbarkeit und erleichtert die Wartung und das Testen.
 
-9. **Selbsterklärender Code**: Kommentare sollten vermieden werden, wo der Code selbst klar sein kann. Guter Code sollte größtenteils selbsterklärend sein.
+9. <a id="a009">A009</a> **Selbsterklärender Code**: Kommentare sollten vermieden werden, wo der Code selbst klar sein kann. Guter Code sollte größtenteils selbsterklärend sein.
 
-10. **Anwendung des SOLID-Prinzips**: SOLID ist ein Akronym für fünf Prinzipien des objektorientierten Designs und der Programmierung, die dazu beitragen, dass der Code sauber, robust und wartbar bleibt.
+10. <a id="a010">A010</a> **Anwendung des SOLID-Prinzips**: SOLID ist ein Akronym für fünf Prinzipien des objektorientierten Designs und der Programmierung, die dazu beitragen, dass der Code sauber, robust und wartbar bleibt.
 
-11. **Performance-Optimierungen**: Auf teure Operationen wie ineffiziente Schleifen oder wiederholte Objektinstanziierungen sollte geachtet werden. Performance-Tools wie JProfiler oder VisualVM können genutzt werden, um Flaschenhälse zu identifizieren und zu beheben.  Zu beachten ist jedoch, dass Performance nur dann verbessert werden sollte, wenn es eine Evindenz dafür gibt, dass es notwendig ist. Ansonsten sollte der Code einfach und verständlich bleiben.
+11. <a id="a011">A011</a> **Performance-Optimierungen**: Auf teure Operationen wie ineffiziente Schleifen oder wiederholte Objektinstanziierungen sollte geachtet werden. Performance-Tools wie JProfiler oder VisualVM können genutzt werden, um Flaschenhälse zu identifizieren und zu beheben.  Zu beachten ist jedoch, dass Performance nur dann verbessert werden sollte, wenn es eine Evindenz dafür gibt, dass es notwendig ist. Ansonsten sollte der Code einfach und verständlich bleiben.
 
-11. **Anwendung Funktionale Programmierkonzepte**: Funktionale Programmierung kann dazu beitragen, dass der Code besser strukturiert und leichter zu testen ist. Konzepte wie Unveränderlichkeit (Immutability), Stream-Operationen und Lambda-Ausdrücke sind besonders nützlich in Java.
+12. <a id="a012">A012</a> **Anwendung Funktionale Programmierkonzepte**: Funktionale Programmierung kann dazu beitragen, dass der Code besser strukturiert und leichter zu testen ist. Konzepte wie Unveränderlichkeit (Immutability), Stream-Operationen und Lambda-Ausdrücke sind besonders nützlich in Java.
 
-12. **Fehlerbehandlung**: Es sollte sichergestellt werden, dass der Code ordnungsgemäß mit Fehlern umgeht. Dazu gehört das Werfen spezifischer benutzerdefinierter Ausnahmen, um den Fehlerzustand genau zu beschreiben. Weiterhin sollten `try/catch`-Blöcke und möglicherweise auch das `finally`-Keyword verwendet werden, um Fehler effektiv zu behandeln und Ressourcen ordnungsgemäß freizugeben.
+13. <a id="a013">A013</a> **Fehlerbehandlung**: Es sollte sichergestellt werden, dass der Code ordnungsgemäß mit Fehlern umgeht. Dazu gehört das Werfen spezifischer benutzerdefinierter Ausnahmen, um den Fehlerzustand genau zu beschreiben. Weiterhin sollten `try/catch`-Blöcke und möglicherweise auch das `finally`-Keyword verwendet werden, um Fehler effektiv zu behandeln und Ressourcen ordnungsgemäß freizugeben.
 
-13. **Anwendung von Design Patterns**: Design Patterns bieten eine wiederverwendbare Vorlage zur Lösung von Softwareentwicklungsproblemen in einem bestimmten Kontext. Sie dienen dazu, den Code sauberer, effizienter und einfacher zu verstehen zu machen. Einige Beispiele für Design Patterns, die in Java häufig verwendet werden, sind:
+14. <a id="a014">A014</a> **Anwendung von Design Patterns**: Design Patterns bieten eine wiederverwendbare Vorlage zur Lösung von Softwareentwicklungsproblemen in einem bestimmten Kontext. Sie dienen dazu, den Code sauberer, effizienter und einfacher zu verstehen zu machen. Einige Beispiele für Design Patterns, die in Java häufig verwendet werden, sind:
 
 - Klassenfabrik (Factory Pattern)
 - Singleton Pattern
 - Builder Pattern
 - [weitere Java Design Patterns](https://refactoring.guru/design-patterns/java)
 
-14. **Verwenden aussagekräftige Rückgabewerte und -typen**: Wenn eine Methode einen Wert zurückgibt, sollte dieser Wert aussagekräftig sein und genau das darstellen, was die Methode tut. Es ist auch hilfreich, konsistente Rückgabetypen zu verwenden.
+15. <a id="a015">A015</a> **Verwenden aussagekräftige Rückgabewerte und -typen**: Wenn eine Methode einen Wert zurückgibt, sollte dieser Wert aussagekräftig sein und genau das darstellen, was die Methode tut. Es ist auch hilfreich, konsistente Rückgabetypen zu verwenden.
 
-15. **Verwenden von JavaDoc für Dokumentation**: JavaDoc ist ein Standard für das Kommentieren von Java-Code, der dabei hilft, den Code zu dokumentieren und zu verstehen. Es ist besonders nützlich für größere Codebasen oder wenn mehrere Entwickler an einem Projekt arbeiten. Mit JavaDoc können Methoden, Parameter, Rückgabewerte und mehr dokumentiert werden. Diese Dokumentation kann dann von verschiedenen Tools verwendet werden, um automatisch API-Dokumentation zu generieren, oder um in einer integrierten Entwicklungsumgebung (IDE) bessere Hinweise und Autovervollständigungen zu bieten.
+16. <a id="a016">A016</a> **Verwenden von JavaDoc für Dokumentation**: JavaDoc ist ein Standard für das Kommentieren von Java-Code, der dabei hilft, den Code zu dokumentieren und zu verstehen. Es ist besonders nützlich für größere Codebasen oder wenn mehrere Entwickler an einem Projekt arbeiten. Mit JavaDoc können Methoden, Parameter, Rückgabewerte und mehr dokumentiert werden. Diese Dokumentation kann dann von verschiedenen Tools verwendet werden, um automatisch API-Dokumentation zu generieren, oder um in einer integrierten Entwicklungsumgebung (IDE) bessere Hinweise und Autovervollständigungen zu bieten.
 
-## Linter verwenden
+## <a id="j001">J001</a> Linter verwenden
 
 ### Problem
 
@@ -1466,3 +1467,55 @@ Es kann Situationen geben, in denen die Verwendung von `com.machinezoo.noexcepti
 
 * [com.machinezoo.noexception - GitHub](https://github.com/robertvazan/com.machinezoo.noexception)
 * [Avoiding Exceptions in Callbacks](https://dzone.com/articles/avoiding-exceptions-in-callbacks)
+
+## Kapselung von API-Methoden zur Vereinfachung und besseren Testbarkeit
+
+### Problem
+API-Methoden können oft komplexe Logik benötigen, um beispielsweise Datenumwandlungen oder Filterungen für die Eingabeparameter und Resultate durchzuführen. Wenn diese Komplexität für die API-Methode notwendig ist und direkt in der eigenen Methode angwendet wird, kann dies zu unübersichtlichem Code und Schwierigkeiten bei der Testbarkeit führen. Darüber hinaus kann es erforderlich sein, die API-Methode in Tests zu mocken, was zu erhöhtem Aufwand führt.
+
+```java
+// Beispiel-API-Methode
+public String[] getActiveUsers(int[] userIds) {
+   // Komplexe Logik zur Umwandlung und Filterung
+   // ...
+   
+   // Rückgabe der Benutzernamen
+   return usernames;
+}
+```
+
+### Refactoring
+
+Um die Komplexität der API-Methode zu reduzieren und die Testbarkeit zu verbessern, sollte die Logik in eine eigene Methode ausgelagert werden, die die API-Methode aufruft und dabei die erforderlichen Umwandlungen und Filterungen durchführt.
+
+```java
+
+// Eigentliche Arbeitsmethode
+private void foo() {
+   List<String> = getActiveUsers(userIds);
+   // ...   
+}
+
+// Kapselungsmethode für die Komplexität der API
+public List<String> getActiveUsers(List<Integer> userIds) {
+   List<User> activeUsernames = api.getUsers(userIds.toArray(new String[0])));
+   
+   // Rückgabe der Benutzernamen als Array
+   return activeUsernames.stream()
+    .filter(User::isActive)
+    .collect(Collectors.toList());
+}
+```
+
+### Vorteile
+
+- Bessere Lesbarkeit und Wartbarkeit des Codes durch Auslagerung der Komplexität des API-Aufrufs in eine eigene Methode.
+- Verbesserte Testbarkeit, da die kapselnde Methode leichter zu testen ist und die API-Methode nur über die kapselnde Methode getestet werden muss.
+- Erhöhte Flexibilität, da die kapselnde Methode bei Bedarf weitere Anpassungen oder Erweiterungen der Funktionalität ermöglicht, ohne die API-Methode direkt zu verändern.
+
+### Ausnahmen
+
+In bestimmten Fällen kann es aus Performance-Gründen oder aufgrund von spezifischen Anforderungen notwendig sein, die Komplexität direkt in der API-Methode zu belassen. In solchen Fällen sollte jedoch sorgfältig abgewogen werden, ob die Vorteile der Kapselung überwiegen.
+
+### Weiterführende Literatur/Links
+- [Clean Code: A Handbook of Agile Software Craftsmanship by Robert C. Martin](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882)
