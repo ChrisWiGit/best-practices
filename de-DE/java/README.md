@@ -27,9 +27,10 @@
 
 ## Allgemein
 
-1. <a id="#a001">A001</a> **Folgen des KISS-Prinzips (Keep it simple and stupid)**: Die Entwicklung von Software sollte nicht der Selbstverwirklichung des Entwicklers dienen, sondern der Lösung eines Problems. Daher sollte Architektur, Code und Dokumentation so einfach wie möglich gehalten werden. Komplexe Lösungen sollten vermieden werden, wenn einfachere Lösungen möglich sind.
+### <a id="#a001">A001</a> Folgen des KISS-Prinzips (Keep it simple and stupid) 
+Die Entwicklung von Software sollte nicht der Selbstverwirklichung des Entwicklers dienen, sondern der Lösung eines Problems. Daher sollte Architektur, Code und Dokumentation so einfach wie möglich gehalten werden. Komplexe Lösungen sollten vermieden werden, wenn einfachere Lösungen möglich sind.
 
-2. <a id="#a002">A002</a> **Folgen des DRY-Prinzips (Don't Repeat Yourself)**: Wird festgestellt, dass derselbe Code an mehreren Stellen verwendet wird, sollte in Betracht gezogen werden, diesen Code in eine Methode oder eine Klasse zu extrahieren und es dann jedes Mal zu verwenden, wenn es benötigt wird.
+### <a id="#a002">A002</a> **Folgen des DRY-Prinzips (Don't Repeat Yourself)**: Wird festgestellt, dass derselbe Code an mehreren Stellen verwendet wird, sollte in Betracht gezogen werden, diesen Code in eine Methode oder eine Klasse zu extrahieren und es dann jedes Mal zu verwenden, wenn es benötigt wird.
 
 3. <a id="#a003">A003</a> **Konsistente Benennung von Variablen und Methoden**: Es sollte sichergestellt werden, dass die verwendeten Namen aussagekräftig sind und den Zweck des Codes genau beschreiben. Die Benennung sollte auch konsistent sein.
 
