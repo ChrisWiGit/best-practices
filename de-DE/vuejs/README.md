@@ -4,20 +4,20 @@
 
 - [VueJs 2 Best Practices und Design Patterns](#vuejs-2-best-practices-und-design-patterns)
   - [Allgemein](#allgemein)
-  - [Vermeiden der Verwendung von v-if mit v-for-Elementen](#vermeiden-der-verwendung-von-v-if-mit-v-for-elementen)
-  - [Verwenden von Computed-Property zur Filterung von Daten](#verwenden-von-computed-property-zur-filterung-von-daten)
-  - [Verwenden von :key-Attribut mit v-for](#verwenden-von-key-attribut-mit-v-for)
-  - [Verwenden der Kebab-Schreibweise, um Ereignisse zu benennen](#verwenden-der-kebab-schreibweise-um-ereignisse-zu-benennen)
-  - [Verwenden der Kebab- oder Pascal-Schreibweise, um Komponenten zu erstellen](#verwenden-der-kebab--oder-pascal-schreibweise-um-komponenten-zu-erstellen)
-  - [Prop-Namen mit Camel-Case im Template und Kebab-Case im Script-Tag](#prop-namen-mit-camel-case-im-template-und-kebab-case-im-script-tag)
-  - [Die Daten einer Komponente sollten als Funktion zurückgegeben werden](#die-daten-einer-komponente-sollten-als-funktion-zurückgegeben-werden)
-  - [Scoping der Komponentenstile](#scoping-der-komponentenstile)
+  - [VJS001 Vermeiden der Verwendung von v-if mit v-for-Elementen](#vjs001-vermeiden-der-verwendung-von-v-if-mit-v-for-elementen)
+  - [VJS002 Verwenden von Computed-Property zur Filterung von Daten](#vjs002-verwenden-von-computed-property-zur-filterung-von-daten)
+  - [VJS003 Verwenden von :key-Attribut mit v-for](#vjs003-verwenden-von-key-attribut-mit-v-for)
+  - [VJS004 Verwenden der Kebab-Schreibweise, um Ereignisse zu benennen](#vjs004-verwenden-der-kebab-schreibweise-um-ereignisse-zu-benennen)
+  - [VJS005 Verwenden der Kebab- oder Pascal-Schreibweise, um Komponenten zu erstellen](#vjs005-verwenden-der-kebab--oder-pascal-schreibweise-um-komponenten-zu-erstellen)
+  - [VJS006 Prop-Namen mit Camel-Case im Template und Kebab-Case im Script-Tag](#vjs006-prop-namen-mit-camel-case-im-template-und-kebab-case-im-script-tag)
+  - [VJS007 Die Daten einer Komponente sollten als Funktion zurückgegeben werden](#vjs007-die-daten-einer-komponente-sollten-als-funktion-zurückgegeben-werden)
+  - [VJS008 Scoping der Komponentenstile](#vjs008-scoping-der-komponentenstile)
 
 <!-- /TOC -->
 
 ## Allgemein
 
-## Vermeiden der Verwendung von v-if mit v-for-Elementen
+## VJS001 Vermeiden der Verwendung von v-if mit v-for-Elementen
 
 ### Problem
 
@@ -66,7 +66,7 @@ Es gibt Fälle, in denen die Verwendung von v-if mit v-for sinnvoll sein kann, z
 - [Vue.js Dokumentation - v-for](https://vuejs.org/v2/guide/list.html#v-for)
 - [Vue.js Style Guide - Avoid v-if with v-for](https://vuejs.org/v2/style-guide/#Avoid-v-if-with-v-for)
 
-## Verwenden von Computed-Property zur Filterung von Daten
+## VJS002 Verwenden von Computed-Property zur Filterung von Daten
 
 ### Problem
 
@@ -134,7 +134,7 @@ In einigen Fällen kann die Verwendung einer Computed-Property zur Filterung von
 - [Vue.js Dokumentation - Computed Properties](https://vuejs.org/v2/guide/computed.html)
 - [Vue.js Style Guide - Use Computed Properties](https://vuejs.org/v2/style-guide/#Use-computed-properties)
 
-## Verwenden von :key-Attribut mit v-for
+## VJS003 Verwenden von :key-Attribut mit v-for
 
 ### Problem
 
@@ -181,7 +181,7 @@ In seltenen Fällen, in denen die Liste nicht aktualisiert wird oder die Reihenf
 - [Vue.js Dokumentation - Listen-Rendering mit v-for](https://vuejs.org/v2/guide/list.html)
 - [Vue.js Style Guide - Keyed v-for](https://vuejs.org/v2/style-guide/#Keyed-v-for)
 
-## Verwenden der Kebab-Schreibweise, um Ereignisse zu benennen
+## VJS004 Verwenden der Kebab-Schreibweise, um Ereignisse zu benennen
 
 ### Problem
 
@@ -218,7 +218,7 @@ Es gibt keine spezifischen Ausnahmen, in denen von der Verwendung von Kebab-Schr
 - [Vue.js Dokumentation - Event Handling](https://vuejs.org/v2/guide/events.html)
 - [Vue.js Style Guide - Event Names](https://vuejs.org/v2/style-guide/#Event-names)
 
-## Verwenden der Kebab- oder Pascal-Schreibweise, um Komponenten zu erstellen
+## VJS005 Verwenden der Kebab- oder Pascal-Schreibweise, um Komponenten zu erstellen
 
 ### Problem
 
@@ -268,7 +268,7 @@ Es gibt keine spezifischen Ausnahmen, in denen von der Verwendung von Kebab- ode
 
 - [Vue.js Style Guide - Component Names](https://vuejs.org/v2/style-guide/#Component-names)
 
-## Prop-Namen mit Camel-Case im Template und Kebab-Case im Script-Tag
+## VJS006 Prop-Namen mit Camel-Case im Template und Kebab-Case im Script-Tag
 
 ### Problem
 
@@ -315,7 +315,7 @@ Es gibt keine spezifischen Ausnahmen, in denen von der Verwendung von Camelcase 
 
 Props](<https://vuejs.org/v2/guide/components-props.html>)
 
-## Die Daten einer Komponente sollten als Funktion zurückgegeben werden
+## VJS007 Die Daten einer Komponente sollten als Funktion zurückgegeben werden
 
 ### Problem
 
@@ -363,7 +363,7 @@ Es gibt keine spezifischen Ausnahmen, in denen von der Verwendung einer Funktion
 
 - [Vue.js Dokumentation - Komponenten-Daten](https://vuejs.org/v2/guide/components.html#data-Must-Be-a-Function)
 
-## Scoping der Komponentenstile
+## VJS008 Scoping der Komponentenstile
 
 ### Problem
 

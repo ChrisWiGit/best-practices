@@ -2,57 +2,104 @@
 
 - [JavaScript Best Practices und Design Patterns](#javascript-best-practices-und-design-patterns)
   - [Allgemein](#allgemein)
-  - [Optionaler Operator ?. / Optional Chaining verwenden](#optionaler-operator---optional-chaining-verwenden)
-  - [Auf null und undefined prüfen](#auf-null-und-undefined-prüfen)
-  - [Object destructuring / Object Eigenschaften bekommen](#object-destructuring--object-eigenschaften-bekommen)
-  - [Verwendung von async und await](#verwendung-von-async-und-await)
-  - [Guard Pattern](#guard-pattern)
-  - [Positiv formulierte If-Bedingungen und Auslagerung komplexer Bedingungen](#positiv-formulierte-if-bedingungen-und-auslagerung-komplexer-bedingungen)
-  - [Begrenzte Zeilenanzahl in Methoden/Funktionen](#begrenzte-zeilenanzahl-in-methodenfunktionen)
-  - [Verwendung von `Optional` in JavaScript-Funktionen](#verwendung-von-optional-in-javascript-funktionen)
-  - [Verwendung der npm-Bibliothek optional.js zur Rückgabe von Optional in JavaScript](#verwendung-der-npm-bibliothek-optionaljs-zur-rückgabe-von-optional-in-javascript)
-  - [If-Bedingungen ohne Else und mit Return](#if-bedingungen-ohne-else-und-mit-return)
-  - [Exceptions in JavaScript nicht einfach loggen und unverändert wieder werfen](#exceptions-in-javascript-nicht-einfach-loggen-und-unverändert-wieder-werfen)
-  - [Verwendung von `const` für alle Variablen in JavaScript und Kennzeichnung von Nicht-Konstanten](#verwendung-von-const-für-alle-variablen-in-javascript-und-kennzeichnung-von-nicht-konstanten)
-  - [Methoden/Funktionen sollten niemals null zurückgeben, sondern immer eine leere Liste, HashMap oder Array](#methodenfunktionen-sollten-niemals-null-zurückgeben-sondern-immer-eine-leere-liste-hashmap-oder-array)
-  - [Benennung von Methoden mit verschiedenen Präfixen für Synchronität und Ergebnisverhalten](#benennung-von-methoden-mit-verschiedenen-präfixen-für-synchronität-und-ergebnisverhalten)
+  - [JS001 Optionaler Operator ?. / Optional Chaining verwenden](#js001-optionaler-operator---optional-chaining-verwenden)
+  - [JS002 Auf null und undefined prüfen](#js002-auf-null-und-undefined-prüfen)
+  - [JS003 Object destructuring / Object Eigenschaften bekommen](#js003-object-destructuring--object-eigenschaften-bekommen)
+  - [JS004 Verwendung von async und await](#js004-verwendung-von-async-und-await)
+  - [JS005 Guard Pattern](#js005-guard-pattern)
+  - [JS006 Positiv formulierte If-Bedingungen und Auslagerung komplexer Bedingungen](#js006-positiv-formulierte-if-bedingungen-und-auslagerung-komplexer-bedingungen)
+  - [JS007 Begrenzte Zeilenanzahl in Methoden/Funktionen](#js007-begrenzte-zeilenanzahl-in-methodenfunktionen)
+  - [JS008 Verwendung von `Optional` in JavaScript-Funktionen](#js008-verwendung-von-optional-in-javascript-funktionen)
+  - [JS009 Verwendung der npm-Bibliothek optional.js zur Rückgabe von Optional in JavaScript](#js009-verwendung-der-npm-bibliothek-optionaljs-zur-rückgabe-von-optional-in-javascript)
+  - [JS010 If-Bedingungen ohne Else und mit Return](#js010-if-bedingungen-ohne-else-und-mit-return)
+  - [JS011 Exceptions in JavaScript nicht einfach loggen und unverändert wieder werfen](#js011-exceptions-in-javascript-nicht-einfach-loggen-und-unverändert-wieder-werfen)
+  - [JS012 Verwendung von `const` für alle Variablen in JavaScript und Kennzeichnung von Nicht-Konstanten](#js012-verwendung-von-const-für-alle-variablen-in-javascript-und-kennzeichnung-von-nicht-konstanten)
+  - [JS013 Methoden/Funktionen sollten niemals null zurückgeben, sondern immer eine leere Liste, HashMap oder Array](#js013-methodenfunktionen-sollten-niemals-null-zurückgeben-sondern-immer-eine-leere-liste-hashmap-oder-array)
+  - [JS014 Benennung von Methoden mit verschiedenen Präfixen für Synchronität und Ergebnisverhalten](#js014-benennung-von-methoden-mit-verschiedenen-präfixen-für-synchronität-und-ergebnisverhalten)
   - [Kurz-Übersicht weiterer Themen zur Ausgestaltung](#kurz-übersicht-weiterer-themen-zur-ausgestaltung)
 
 <!-- /TOC -->
 
 ## Allgemein
 
-1. **Folgen des KISS-Prinzips (Keep it simple and stupid)**: Die Entwicklung von Software sollte nicht der Selbstverwirklichung des Entwicklers dienen, sondern der Lösung eines Problems. Daher sollte Architektur, Code und Dokumentation so einfach wie möglich gehalten werden. Komplexe Lösungen sollten vermieden werden, wenn einfachere Lösungen möglich sind.
+### A001 **Folgen des KISS-Prinzips (Keep it simple and stupid)
 
-2. **Folgen des DRY-Prinzips (Don't Repeat Yourself)**: Wird festgestellt, dass derselbe Code an mehreren Stellen verwendet wird, sollte in Betracht gezogen werden, diesen Code in eine Funktion oder ein Modul zu extrahieren und es dann jedes Mal zu verwenden, wenn es benötigt wird.
+Die Entwicklung von Software sollte nicht der Selbstverwirklichung des Entwicklers dienen, sondern der Lösung eines Problems. Daher sollte Architektur, Code und Dokumentation so einfach wie möglich gehalten werden. Komplexe Lösungen sollten vermieden werden, wenn einfachere Lösungen möglich sind.
 
-3. **Konsistente Benennung von Variablen und Funktionen**: Es sollte sichergestellt werden, dass die verwendeten Namen aussagekräftig sind und den Zweck des Codes genau beschreiben. Die Benennung sollte auch konsistent sein.
+### A002 **Folgen des DRY-Prinzips (Don't Repeat Yourself)
 
-4. **Anwendung von ES6 Features**: Mit ES6 stehen viele neue Möglichkeiten zur Verfügung, um den Code zu verbessern. Beispielsweise könnten Pfeilfunktionen, Template-Strings, Default-Parameter, Rest- und Spread-Operator, Destructuring-Zuweisungen, `const` und `let` anstelle von `var` für eine bessere Kontrolle des Scopings, Klassen, Module, Promises und Iteratoren verwendet werden, um den Code kürzer und leichter lesbar zu machen.
+Wird festgestellt, dass derselbe Code an mehreren Stellen verwendet wird, sollte in Betracht gezogen werden, diesen Code in eine Funktion oder ein Modul zu extrahieren und es dann jedes Mal zu verwenden, wenn es benötigt wird.
 
-5. **Vermeidung von Callback-Hölle**: Verschachtelte Callbacks sollten vermieden werden, da sie den Code schwer lesbar und wartbar machen. Promises oder `async/await` können verwendet werden, um den asynchronen Code besser handhaben zu können.
+### A003 **Konsistente Benennung von Variablen und Funktionen
 
-6. **Einsatz von Linter und Formatter**: Tools wie ESLint und Prettier können dabei helfen, den Code konsistent und fehlerfrei zu halten.
+Es sollte sichergestellt werden, dass die verwendeten Namen aussagekräftig sind und den Zweck des Codes genau beschreiben. Die Benennung sollte auch konsistent sein.
 
-7. **Schreiben von Unit-Tests**: Guter refaktorierter Code sollte immer von Tests begleitet werden. Sie helfen dabei, sicherzustellen, dass der Code nach dem Refactoring immer noch wie erwartet funktioniert.
+### A004 **Anwendung von ES6 Features
 
-8. **Anwendung Modulare Architektur**: Der Code sollte in kleinere, wiederverwendbare Module aufgeteilt werden. Dies erhöht die Lesbarkeit und erleichtert die Wartung und das Testen.
+Mit ES6 stehen viele neue Möglichkeiten zur Verfügung, um den Code zu verbessern. Beispielsweise könnten Pfeilfunktionen, Template-Strings, Default-Parameter, Rest- und Spread-Operator, Destructuring-Zuweisungen, `const` und `let` anstelle von `var` für eine bessere Kontrolle des Scopings, Klassen, Module, Promises und Iteratoren verwendet werden, um den Code kürzer und leichter lesbar zu machen.
 
-9.  **Selbsterklärender Code**: Kommentare sollten vermieden werden, wo der Code selbst klar sein kann. Guter Code sollte größtenteils selbsterklärend sein.
+### A005 **Vermeidung von Callback-Hölle
 
-10. **Anwendung des SOLID-Prinzips**: SOLID ist ein Akronym für fünf Prinzipien des objektorientierten Designs und der Programmierung, die dazu beitragen, dass der Code sauber, robust und wartbar bleibt.
+Verschachtelte Callbacks sollten vermieden werden, da sie den Code schwer lesbar und wartbar machen. Promises oder `async/await` können verwendet werden, um den asynchronen Code besser handhaben zu können.
 
-11. **Performance-Optimierungen**: Auf teure Operationen wie unnötige DOM-Manipulationen oder ineffiziente Schleifen sollte geachtet werden. Performance-Tools wie die Chrome DevTools können genutzt werden, um Flaschenhälse zu identifizieren und zu beheben.
+### A006 **Einsatz von Linter und Formatter
 
-12. **Anwendung Funktionale Programmierkonzepte**: Funktionale Programmierung kann dazu beitragen, dass der Code besser strukturiert und leichter zu testen ist. Konzepte wie Unveränderlichkeit (Immutability), reine Funktionen und höherwertige Funktionen (Higher Order Functions) sind besonders nützlich.
+Tools wie ESLint und Prettier können dabei helfen, den Code konsistent und fehlerfrei zu halten.
 
-13. **Fehlerbehandlung**: Es sollte sichergestellt werden, dass der Code ordnungsgemäß mit Fehlern umgeht. Dies könnte beinhalten, dass versucht wird, Fehler frühzeitig zu werfen, anstatt sie zu ignorieren, und dass `try/catch`-Blöcke verwendet werden, um Fehler effektiv zu behandeln.
+### A007 **Schreiben von Unit-Tests
 
-## Optionaler Operator ?. / Optional Chaining verwenden
+Guter refaktorierter Code sollte immer von Tests begleitet werden. Sie helfen dabei, sicherzustellen, dass der Code nach dem Refactoring immer noch wie erwartet funktioniert.
+
+### A008 **Anwendung Modulare Architektur
+
+Der Code sollte in kleinere, wiederverwendbare Module aufgeteilt werden. Dies erhöht die Lesbarkeit und erleichtert die Wartung und das Testen.
+
+### A009 **Selbsterklärender Code
+
+Kommentare sollten vermieden werden, wo der Code selbst klar sein kann. Guter Code sollte größtenteils selbsterklärend sein.
+
+### A010  **Anwendung des SOLID-Prinzips
+
+SOLID ist ein Akronym für fünf Prinzipien des objektorientierten Designs und der Programmierung, die dazu beitragen, dass der Code sauber, robust und wartbar bleibt.
+
+### A011 **Performance-Optimierungen
+
+Auf teure Operationen wie unnötige DOM-Manipulationen oder ineffiziente Schleifen sollte geachtet werden. Performance-Tools wie die Chrome DevTools können genutzt werden, um Flaschenhälse zu identifizieren und zu beheben.
+
+### A012 **Anwendung Funktionale Programmierkonzepte
+
+Funktionale Programmierung kann dazu beitragen, dass der Code besser strukturiert und leichter zu testen ist. Konzepte wie Unveränderlichkeit (Immutability), reine Funktionen und höherwertige Funktionen (Higher Order Functions) sind besonders nützlich.
+
+### A013 **Fehlerbehandlung
+
+Es sollte sichergestellt werden, dass der Code ordnungsgemäß mit Fehlern umgeht. Dies könnte beinhalten, dass versucht wird, Fehler frühzeitig zu werfen, anstatt sie zu ignorieren, und dass `try/catch`-Blöcke verwendet werden, um Fehler effektiv zu behandeln.
+
+### A014 Anwendung von Design Patterns
+
+Design Patterns bieten eine wiederverwendbare Vorlage zur Lösung von Softwareentwicklungsproblemen in einem bestimmten Kontext. Sie dienen dazu, den Code sauberer, effizienter und einfacher zu verstehen zu machen. Einige Beispiele für Design Patterns, die in Java häufig verwendet werden, sind:
+
+- Klassenfabrik (Factory Pattern)
+- Singleton Pattern
+- Builder Pattern
+- weitere Patterns [dofactory Design Patterns](https://www.dofactory.com/javascript/design-patterns)
+
+### A015 Verwenden aussagekräftige Rückgabewerte und -typen
+
+Wenn eine Methode einen Wert zurückgibt, sollte dieser Wert aussagekräftig sein und genau das darstellen, was die Methode tut. Es ist auch hilfreich, konsistente Rückgabetypen zu verwenden.
+
+### A016 Verwenden von JSDoc für Dokumentation
+
+JSDoc ist ein Standard für das Kommentieren von JavaScript-Code, der dabei hilft, den Code zu dokumentieren und zu verstehen. Es ist besonders nützlich für größere Codebasen oder wenn mehrere Entwickler an einem Projekt arbeiten. Mit JSDoc können Methoden, Parameter, Rückgabewerte und mehr dokumentiert werden. Diese Dokumentation kann dann von verschiedenen Tools verwendet werden, um automatisch API-Dokumentation zu generieren, oder um in einer integrierten Entwicklungsumgebung (IDE) bessere Hinweise und Autovervollständigungen zu bieten.
+
+### A017 Code nicht kommentieren
+
+Schlechter Code sollte nicht kommentiert werden, sondern sollte stattdessen refaktoriert werden, um ihn besser lesbar und verständlich zu machen. Kommentare sollten nur verwendet werden, wenn es notwendig ist, um den Zweck des Codes zu erklären oder um auf Probleme hinzuweisen, die nicht durch Refactoring behoben werden können.
+
+## JS001 Optionaler Operator ?. / Optional Chaining verwenden
 
 Der optionale Operator `?.` oder Optional Chaining ermöglicht den Zugriff auf Unterschlüssel, ohne explizit auf `null` oder `undefined` prüfen zu müssen.
 
-> Alternativ kann auch das [Optional-Klassen-Pattern](#verwendung-von-optional-in-javascript-funktionen) verwendet werden.
+> Alternativ kann auch das [Optional-Klassen-Pattern](#js008-verwendung-von-optional-in-javascript-funktionen) verwendet werden.
 
 ### Problem
 
@@ -122,7 +169,7 @@ console.log('Defined', a.b.e[0]?.f == null);
 
 Weitere Informationen zur Verwendung des optionalen Operators `?.` oder Optional Chaining in JavaScript findest du in der [Mozilla Developer Network (MDN) Dokumentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining). Dort werden die Funktionsweise und die verschiedenen Anwendungsfälle ausführlich erläutert.
 
-## Auf null und undefined prüfen
+## JS002 Auf null und undefined prüfen
 
 Bei der Überprüfung auf `null` oder `undefined` ist es wichtig, die korrekte Überprüfung durchzuführen, da andernfalls unerwartet auch Werte wie 0, "", oder false fälschlicherweise als falsy-Werte erkannt werden können.
 
@@ -166,7 +213,7 @@ Die VErwendung von zwei Gleichheitszeichen `==` anstelle von drei `===` ist hier
 - Werte wie NaN werden nicht erkannt
 - ESLint muss entsprechend konfiguriert werden, um die Verwendung von `==` bei null Vergleich zu erlauben. Dies ist möglich, indem die Regel `eqeqeq` auf [smart](https://eslint.org/docs/latest/rules/eqeqeq#smart) umgestellt wird.
 
-## Object destructuring / Object Eigenschaften bekommen
+## JS003 Object destructuring / Object Eigenschaften bekommen
 
 Beim Object Destructuring werden die Eigenschaften eines Objekts in einzelne Variablen aufgeteilt und gespeichert.
 
@@ -200,7 +247,7 @@ const { speed, color } = car;
 - Kürzerer und lesbarerer Code
 - Direkter Zugriff auf die gewünschten Eigenschaften des Objekts
 
-## Verwendung von async und await
+## JS004 Verwendung von async und await
 
 Die Verwendung von `async` und `await` bietet eine elegante Möglichkeit, asynchrone Funktionen in JavaScript zu schreiben und zu verwalten.
 
@@ -254,7 +301,7 @@ async function myAsyncFunction() {
 
 - [Async functions - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
 
-## Guard Pattern
+## JS005 Guard Pattern
 
 Das Guard Pattern ist eine Best Practice, um die Lesbarkeit und Robustheit von Code zu verbessern, insbesondere bei Bedingungsprüfungen.
 
@@ -294,11 +341,12 @@ function processInput(input) {
 
 - [Guard Clause Pattern - Refactoring.Guru](https://refactoring.guru/smells/guard-clauses)
 
-## Positiv formulierte If-Bedingungen und Auslagerung komplexer Bedingungen
+## JS006 Positiv formulierte If-Bedingungen und Auslagerung komplexer Bedingungen
 
 Positiv formulierte If-Bedingungen und die Auslagerung komplexer Bedingungen in temporäre Variablen verbessern die Lesbarkeit und Wartbarkeit des Codes.
 
 > Die Aufsplittung von If-Bedingungen ist sehr abhängig vom Verständnis des Entwicklers und sollte mit Sinn und Verstand eingesetzt werden.
+>
 ### Problem
 
 Komplexe Bedingungen in If-Anweisungen können den Code schwer verständlich machen, insbesondere wenn sie negativ formuliert sind. Lange und verschachtelte Bedingungen erschweren die Lesbarkeit und können zu Fehlern führen.
@@ -361,7 +409,7 @@ Es gibt Fälle, in denen das Auslagern von Bedingungen in temporäre Variablen n
 - [The Art of Readable Code - Simple Conditionals](https://www.amazon.com/dp/0596802293)
 - [Clean Code: A Handbook of Agile Software Craftsmanship](https://www.amazon.com/dp/0132350882)
 
-## Begrenzte Zeilenanzahl in Methoden/Funktionen
+## JS007 Begrenzte Zeilenanzahl in Methoden/Funktionen
 
 Die Begrenzung der Anzahl von Codezeilen in Methoden und Funktionen verbessert die Lesbarkeit, Wartbarkeit und Verständlichkeit des Codes. Es ermöglicht auch eine bessere Testbarkeit des Codes.
 
@@ -500,12 +548,12 @@ Die Verwendung kleiner Methoden verbessert die Qualität und Wartbarkeit des Cod
 
 Die Anzahl der Codezeilen in einer Methode oder Funktion kann je nach Kontext und Komplexität des Codes variieren. Es ist wichtig, das Gleichgewicht zwischen einer angemessenen Zeilenzahl und einer klaren, verständlichen und wartbaren Struktur zu finden.
 
-## Verwendung von `Optional` in JavaScript-Funktionen
+## JS008 Verwendung von `Optional` in JavaScript-Funktionen
 
 Eine Funktion sollte niemals `null`, `undefined` oder `NaN` zurückgeben und stattdessen die `Optional`-Klasse verwenden, um den Status des Ergebnisses zu kennzeichnen.
 
-> Alternativ kann auch der Optional-Operator `.?` verwendet werden. Siehe das [Kapitel dazu](#optionaler-operator---optional-chaining-verwenden).
-> Alternativ auch [Verwendung von `Optional` in JavaScript-Funktionen](#verwendung-von-optional-in-javascript-funktionen)
+> Alternativ kann auch der Optional-Operator `.?` verwendet werden. Siehe das [Kapitel dazu](#js001-optionaler-operator---optional-chaining-verwenden).
+> Alternativ auch [Verwendung von `Optional` in JavaScript-Funktionen](#js008-verwendung-von-optional-in-javascript-funktionen)
 
 ### Problem
 
@@ -636,7 +684,7 @@ Optional.isOptional = function(optional) {
 };
 ```
 
-## Verwendung der npm-Bibliothek optional.js zur Rückgabe von Optional in JavaScript
+## JS009 Verwendung der npm-Bibliothek optional.js zur Rückgabe von Optional in JavaScript
 
 Es ist einfach in JavaScript, die npm-Bibliothek optional.js zu verwenden, um die Rückgabe von Optional-Objekten anstelle von null oder anderen Fehlertypen zu ermöglichen.
 Durch die Verwendung von Optional-Objekten wird deutlich, dass eine Funktion möglicherweise keinen Wert zurückgibt und ermöglicht eine bessere Behandlung von optionalen Werten.
@@ -700,7 +748,7 @@ Es kann Situationen geben, in denen die Verwendung der optional.js-Bibliothek ni
 - [optional.js - npm](https://www.npmjs.com/package/optional-js)
 - [Avoiding Null in JavaScript: An Introduction to Optional Values](https://dev.to/marcellomontemagno/avoiding-null-in-javascript-an-introduction-to-optional-values-4m22)
 
-## If-Bedingungen ohne Else und mit Return
+## JS010 If-Bedingungen ohne Else und mit Return
 
 If-Bedingungen, die ein Return enthalten, sollten kein else enthalten, um die Lesbarkeit des Codes zu verbessern und die Verschachtelung von Bedingungen zu reduzieren.
 
@@ -761,7 +809,7 @@ function calculate(x) {
 - [Clean Code: A Handbook of Agile Software Craftsmanship](https://www.amazon.com/dp/0132350882)
 - [JavaScript: The Good Parts](https://www.amazon.com/dp/0596517742)
 
-## Exceptions in JavaScript nicht einfach loggen und unverändert wieder werfen
+## JS011 Exceptions in JavaScript nicht einfach loggen und unverändert wieder werfen
 
 Exceptions sollten in JavaScript nicht einfach nur geloggt und unverändert wieder geworfen werden.
 Stattdessen ist es wichtig, Exceptions sinnvoll zu behandeln und angemessene Maßnahmen zu ergreifen.
@@ -810,7 +858,7 @@ In einigen Fällen kann es sinnvoll sein, Exceptions zu loggen und unverändert 
 - [Exception Handling Best Practices in JavaScript](https://www.toptal.com/javascript/exception-handling-javascript-best-practices)
 - [JavaScript Error Handling: Best Practices](https://blog.bitsrc.io/javascript-error-handling-best-practices-329c5f6e5d33)
 
-## Verwendung von `const` für alle Variablen in JavaScript und Kennzeichnung von Nicht-Konstanten
+## JS012 Verwendung von `const` für alle Variablen in JavaScript und Kennzeichnung von Nicht-Konstanten
 
 Um unbeabsichtigtes Ändern von Variablen zu vermeiden, sollte in JavaScript das Schlüsselwort `const` für alle Variablen verwendet werden.
 In Fällen, in denen die Verwendung von `const` nicht möglich ist, sollte ein Kommentar mit dem Inhalt "nonconst" hinzugefügt werden.
@@ -861,7 +909,7 @@ In solchen Fällen kann die Kennzeichnung mit einem Kommentar "nonconst" helfen,
 - [MDN Web Docs: const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
 - [JavaScript: const, let, or var?](https://www.freecodecamp.org/news/var-let-and-const-whats-the-difference/)
 
-## Methoden/Funktionen sollten niemals null zurückgeben, sondern immer eine leere Liste, HashMap oder Array
+## JS013 Methoden/Funktionen sollten niemals null zurückgeben, sondern immer eine leere Liste, HashMap oder Array
 
 Es ist eine bewährte Praxis in Java und JavaScript, dass Methoden/Funktionen, die Listen, Hashmaps oder Arrays zurückgeben, niemals null zurückgeben sollten. Stattdessen sollte immer eine leere Liste, HashMap oder ein leeres Array zurückgegeben werden.
 
@@ -883,8 +931,8 @@ getNames() {
 
 Um Zugriffsfehler und unerwartetes Verhalten zu vermeiden, sollten Methoden/Funktionen stattdessen ein leeres Objekt oder Array zurückgeben.
 
-> Alternativ kann auch der Optional-Operator `.?` verwendet werden. Siehe das [Kapitel dazu](#optionaler-operator---optional-chaining-verwenden).
-> Alternativ kann auch das [Optional-Klassen-Pattern](#verwendung-von-optional-in-javascript-funktionen) verwendet werden.
+> Alternativ kann auch der Optional-Operator `.?` verwendet werden. Siehe das [Kapitel dazu](#js001-optionaler-operator---optional-chaining-verwenden).
+> Alternativ kann auch das [Optional-Klassen-Pattern](#js008-verwendung-von-optional-in-javascript-funktionen) verwendet werden.
 
 ```javascript
 function getNames() {
@@ -911,7 +959,7 @@ Es kann Situationen geben, in denen die Rückgabe von null sinnvoll ist, z. B. w
 - [Null or Empty Collection in Java](https://www.baeldung.com/java-null-empty-collection) (für Java)
 - [Avoiding Null in JavaScript](https://dmitripavlutin.com/avoid-null-undefined-javascript/) (für JavaScript)
 
-## Benennung von Methoden mit verschiedenen Präfixen für Synchronität und Ergebnisverhalten
+## JS014 Benennung von Methoden mit verschiedenen Präfixen für Synchronität und Ergebnisverhalten
 
 Es ist eine bewährte Praxis bei der Benennung von Methoden in JavaScript und Java, unterschiedliche Präfixe zu verwenden, um die Synchronität und das Ergebnisverhalten der Methode zu kennzeichnen. Das Präfix "get" sollte für synchronen Zugriff verwendet werden und immer einen Wert zurückgeben, während die Präfixe "fetch" oder "request" für asynchronen Zugriff stehen, der länger dauern und auch fehlschlagen kann.
 

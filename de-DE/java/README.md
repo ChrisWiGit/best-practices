@@ -27,59 +27,59 @@
 
 ## Allgemein
 
-### <a id="#a001">A001</a> Folgen des KISS-Prinzips (Keep it simple and stupid) 
+### A001 Folgen des KISS-Prinzips (Keep it simple and stupid)
 
 Die Entwicklung von Software sollte nicht der Selbstverwirklichung des Entwicklers dienen, sondern der Lösung eines Problems. Daher sollte Architektur, Code und Dokumentation so einfach wie möglich gehalten werden. Komplexe Lösungen sollten vermieden werden, wenn einfachere Lösungen möglich sind.
 
-### <a id="#a002">A002</a> Folgen des DRY-Prinzips (Don't Repeat Yourself)
+### A002 Folgen des DRY-Prinzips (Don't Repeat Yourself)
 
 Wird festgestellt, dass derselbe Code an mehreren Stellen verwendet wird, sollte in Betracht gezogen werden, diesen Code in eine Methode oder eine Klasse zu extrahieren und es dann jedes Mal zu verwenden, wenn es benötigt wird.
 
-### <a id="#a003">A003</a> Konsistente Benennung von Variablen und Methoden
+### A003 Konsistente Benennung von Variablen und Methoden
 
 Es sollte sichergestellt werden, dass die verwendeten Namen aussagekräftig sind und den Zweck des Codes genau beschreiben. Die Benennung sollte auch konsistent sein.
 
-### <a id="#a004">A004</a> Anwendung von neuen Java Features
+### A004 Anwendung von neuen Java Features
 
 Mit Java 11 bis 17 stehen viele neue Möglichkeiten zur Verfügung, um den Code zu verbessern. Beispielsweise könnten Var-Typinferenz, Lambda-Ausdrücke und Streams, optionale Typen, neue Methoden für String-Verarbeitung, neue APIs für HTTP-Clients und vieles mehr verwendet werden, um den Code kürzer und leichter lesbar zu machen.
 
-### <a id="#a005">A005</a> Vermeidung von tief verschachteltem Code
+### A005 Vermeidung von tief verschachteltem Code
 
 Tief verschachtelter Code sollte vermieden werden, da er den Code schwer lesbar und wartbar macht. Die Verwendung von flachen Hierarchien und kurzen Methoden kann die Lesbarkeit und Wartbarkeit erheblich verbessern.
 
-### <a id="#a006">A006</a> Einsatz von Linter und Formatter
+### A006 Einsatz von Linter und Formatter
 
 Tools wie Checkstyle, PMD oder SpotBugs können dabei helfen, den Code konsistent und fehlerfrei zu halten.
 
-### <a id="#a007">A007</a> Schreiben von Unit-Tests
+### A007 Schreiben von Unit-Tests
 
 Guter refaktorierter Code sollte immer von Tests begleitet werden. Sie helfen dabei, sicherzustellen, dass der Code nach dem Refactoring immer noch wie erwartet funktioniert.
 
-### <a id="#a008">A008</a> Anwendung Modulare Architektur
+### A008 Anwendung Modulare Architektur
 
 Der Code sollte in kleinere, wiederverwendbare Klassen und Pakete aufgeteilt werden. Dies erhöht die Lesbarkeit und erleichtert die Wartung und das Testen.
 
-### <a id="#a009">A009</a> Selbsterklärender Code
+### A009 Selbsterklärender Code
 
 Kommentare sollten vermieden werden, wo der Code selbst klar sein kann. Guter Code sollte größtenteils selbsterklärend sein.
 
-### <a id="#a010">A010</a> Anwendung des SOLID-Prinzips
+### A010 Anwendung des SOLID-Prinzips
 
 SOLID ist ein Akronym für fünf Prinzipien des objektorientierten Designs und der Programmierung, die dazu beitragen, dass der Code sauber, robust und wartbar bleibt.
 
-### <a id="#a011">A011</a> Performance-Optimierungen
+### A011 Performance-Optimierungen
 
 Auf teure Operationen wie ineffiziente Schleifen oder wiederholte Objektinstanziierungen sollte geachtet werden. Performance-Tools wie JProfiler oder VisualVM können genutzt werden, um Flaschenhälse zu identifizieren und zu beheben.  Zu beachten ist jedoch, dass Performance nur dann verbessert werden sollte, wenn es eine Evindenz dafür gibt, dass es notwendig ist. Ansonsten sollte der Code einfach und verständlich bleiben.
 
-### <a id="#a012">A012</a> Anwendung Funktionale Programmierkonzepte
+### A012 Anwendung Funktionale Programmierkonzepte
 
 Funktionale Programmierung kann dazu beitragen, dass der Code besser strukturiert und leichter zu testen ist. Konzepte wie Unveränderlichkeit (Immutability), Stream-Operationen und Lambda-Ausdrücke sind besonders nützlich in Java.
 
-### <a id="#a013">A013</a> Fehlerbehandlung
+### A013 Fehlerbehandlung
 
 Es sollte sichergestellt werden, dass der Code ordnungsgemäß mit Fehlern umgeht. Dazu gehört das Werfen spezifischer benutzerdefinierter Ausnahmen, um den Fehlerzustand genau zu beschreiben. Weiterhin sollten `try/catch`-Blöcke und möglicherweise auch das `finally`-Keyword verwendet werden, um Fehler effektiv zu behandeln und Ressourcen ordnungsgemäß freizugeben.
 
-### <a id="#a014">A014</a> Anwendung von Design Patterns
+### A014 Anwendung von Design Patterns
 
 Design Patterns bieten eine wiederverwendbare Vorlage zur Lösung von Softwareentwicklungsproblemen in einem bestimmten Kontext. Sie dienen dazu, den Code sauberer, effizienter und einfacher zu verstehen zu machen. Einige Beispiele für Design Patterns, die in Java häufig verwendet werden, sind:
 
@@ -88,20 +88,19 @@ Design Patterns bieten eine wiederverwendbare Vorlage zur Lösung von Softwareen
 - Builder Pattern
 - [weitere Java Design Patterns](https://refactoring.guru/design-patterns/java)
 
-### <a id="#a015">A015</a> Verwenden aussagekräftige Rückgabewerte und -typen
+### A015 Verwenden aussagekräftige Rückgabewerte und -typen
 
 Wenn eine Methode einen Wert zurückgibt, sollte dieser Wert aussagekräftig sein und genau das darstellen, was die Methode tut. Es ist auch hilfreich, konsistente Rückgabetypen zu verwenden.
 
-### <a id="#a016">A016</a> Verwenden von JavaDoc für Dokumentation
+### A016 Verwenden von JavaDoc für Dokumentation
 
 JavaDoc ist ein Standard für das Kommentieren von Java-Code, der dabei hilft, den Code zu dokumentieren und zu verstehen. Es ist besonders nützlich für größere Codebasen oder wenn mehrere Entwickler an einem Projekt arbeiten. Mit JavaDoc können Methoden, Parameter, Rückgabewerte und mehr dokumentiert werden. Diese Dokumentation kann dann von verschiedenen Tools verwendet werden, um automatisch API-Dokumentation zu generieren, oder um in einer integrierten Entwicklungsumgebung (IDE) bessere Hinweise und Autovervollständigungen zu bieten.
 
-### <a id="#a017">A017</a> Code nicht kommentieren
+### A017 Code nicht kommentieren
 
 Schlechter Code sollte nicht kommentiert werden, sondern sollte stattdessen refaktoriert werden, um ihn besser lesbar und verständlich zu machen. Kommentare sollten nur verwendet werden, wenn es notwendig ist, um den Zweck des Codes zu erklären oder um auf Probleme hinzuweisen, die nicht durch Refactoring behoben werden können.
 
-
-## <a id="#j001">J001</a> Linter verwenden
+## J001 Linter verwenden
 
 ### Problem
 
@@ -534,14 +533,14 @@ Durch das Hinzufügen von JavaDoc-Kommentaren können andere Entwickler den Code
 
 ### Vorteile
 
-* Durch die Verwendung von JavaDoc-Kommentaren kann der Code besser dokumentiert werden, was dazu beiträgt, dass andere Entwickler den Code besser verstehen und die Wartbarkeit des Codes verbessern können.
-* JavaDoc-Kommentare können auch automatisch generiert werden, um API-Dokumentationen zu erstellen, die anderen Entwicklern die Verwendung von Bibliotheken und Frameworks erleichtern können.
-* Aktuell Entwicklungen bei der KI ermöglichen es sogar, JavaDoc-Kommentare automatisch zu generieren.
-* Code verhalten kann so besser dokumentiert und kommuniziert werden.
+- Durch die Verwendung von JavaDoc-Kommentaren kann der Code besser dokumentiert werden, was dazu beiträgt, dass andere Entwickler den Code besser verstehen und die Wartbarkeit des Codes verbessern können.
+- JavaDoc-Kommentare können auch automatisch generiert werden, um API-Dokumentationen zu erstellen, die anderen Entwicklern die Verwendung von Bibliotheken und Frameworks erleichtern können.
+- Aktuell Entwicklungen bei der KI ermöglichen es sogar, JavaDoc-Kommentare automatisch zu generieren.
+- Code verhalten kann so besser dokumentiert und kommuniziert werden.
 
 ### Nachteile
 
-* Änderungen von Code müssen auch in der Doku geändert werden, anderfalls kann es zu Verwirrungen kommen.
+- Änderungen von Code müssen auch in der Doku geändert werden, anderfalls kann es zu Verwirrungen kommen.
 
 ### Ausnahmen
 
@@ -788,14 +787,14 @@ Der `productId`-Parameter muss eine ganze Zahl sein.
 
 ### Vorteile
 
-* Bessere Eingabeprüfung: Annotationen ermöglichen eine präzisere Definition der zulässigen Werte und Formate von Parametern, was zu einer besseren Eingabeprüfung führt.
-* Sicherheit: Eine effektive Eingabeprüfung kann dazu beitragen, Sicherheitsprobleme zu verhindern, die durch unerwartete oder ungültige Eingaben verursacht werden können.
-* In der Regel wird der HTTP-Statuscode "400 Bad Request" zurückgegeben, wenn eine Eingabeprüfung in einer REST-API fehlschlägt.
-* Bessere Lesbarkeit und Nachvollziehbarkeit: Annotationen können verwendet werden, um die Bedeutung von Parametern in REST-Methoden zu dokumentieren.
+- Bessere Eingabeprüfung: Annotationen ermöglichen eine präzisere Definition der zulässigen Werte und Formate von Parametern, was zu einer besseren Eingabeprüfung führt.
+- Sicherheit: Eine effektive Eingabeprüfung kann dazu beitragen, Sicherheitsprobleme zu verhindern, die durch unerwartete oder ungültige Eingaben verursacht werden können.
+- In der Regel wird der HTTP-Statuscode "400 Bad Request" zurückgegeben, wenn eine Eingabeprüfung in einer REST-API fehlschlägt.
+- Bessere Lesbarkeit und Nachvollziehbarkeit: Annotationen können verwendet werden, um die Bedeutung von Parametern in REST-Methoden zu dokumentieren.
 
 ### Nachteile
 
-* Nicht alle Eingabeprüfungen können mit Annotationen durchgeführt werden. Eine manuelle Prüfung im Code ist in einigen Fällen erforderlich.
+- Nicht alle Eingabeprüfungen können mit Annotationen durchgeführt werden. Eine manuelle Prüfung im Code ist in einigen Fällen erforderlich.
 
 ### weiterführende Literatur/Links
 
@@ -914,12 +913,12 @@ public void calculateTotalPrice(final double basePrice, final double discountRat
 
 ### Vorteile
 
-* Unveränderliche Variablen, Attribute und Parameter machen den Code robuster und fehleranfälliger, da sie unerwartete Änderungen von Werten verhindern.
-* Lesbarkeit und Nachvollziehbarkeit des Codes werden durch `final` verbessert, da es klarer ist, welche Werte sich nicht ändern können.
+- Unveränderliche Variablen, Attribute und Parameter machen den Code robuster und fehleranfälliger, da sie unerwartete Änderungen von Werten verhindern.
+- Lesbarkeit und Nachvollziehbarkeit des Codes werden durch `final` verbessert, da es klarer ist, welche Werte sich nicht ändern können.
 
 ### Ausnahmen
 
-* In manchen Fällen kann es sinnvoll sein, Variablen, Attribute oder Parameter nicht als `final` zu deklarieren, wenn sich der Wert häufig ändern muss oder wenn es aus anderen Gründen sinnvoll erscheinen (Legacy Code).
+- In manchen Fällen kann es sinnvoll sein, Variablen, Attribute oder Parameter nicht als `final` zu deklarieren, wenn sich der Wert häufig ändern muss oder wenn es aus anderen Gründen sinnvoll erscheinen (Legacy Code).
 In diesen Fällen sollte die Variable mit `/*nonfinal*/` oder Ähnlichem kommentiert werden.
 
 ## J012 Guard Pattern in Java
@@ -956,13 +955,13 @@ public void processInput(String input) {
 
 ### Vorteile
 
-* Verbesserte Lesbarkeit des Codes durch eine klare und frühzeitige Abhandlung unerwünschter Fälle zu Beginn der Methode.
-* Reduzierung der Verschachtelung von Bedingungsprüfungen.
-* Einfache Erweiterbarkeit und Wartbarkeit des Codes.
+- Verbesserte Lesbarkeit des Codes durch eine klare und frühzeitige Abhandlung unerwünschter Fälle zu Beginn der Methode.
+- Reduzierung der Verschachtelung von Bedingungsprüfungen.
+- Einfache Erweiterbarkeit und Wartbarkeit des Codes.
 
 ### Nachteile
 
-* Das Guard Pattern kann zu einem erhöhten Rückgabewert führen, wenn in jedem Guard-Zweig ein `return`-Statement verwendet wird. Dies sollte jedoch kein Problem sein, solange die Methode einen void-Rückgabetyp hat oder der Rückgabewert keine weitere Bedeutung hat.
+- Das Guard Pattern kann zu einem erhöhten Rückgabewert führen, wenn in jedem Guard-Zweig ein `return`-Statement verwendet wird. Dies sollte jedoch kein Problem sein, solange die Methode einen void-Rückgabetyp hat oder der Rückgabewert keine weitere Bedeutung hat.
 
 ### Ausnahmen
 
@@ -1004,14 +1003,14 @@ if (!isNameEmpty && !isUnderAge && isNotAuthorized) {
 
 ### Vorteile
 
-* Verbesserte Lesbarkeit des Codes durch positiv formulierte Bedingungen
-* Reduzierung der Verschachtelung und Komplexität von If-Anweisungen
-* Bessere Wartbarkeit des Codes durch klare und beschreibende Variablen
+- Verbesserte Lesbarkeit des Codes durch positiv formulierte Bedingungen
+- Reduzierung der Verschachtelung und Komplexität von If-Anweisungen
+- Bessere Wartbarkeit des Codes durch klare und beschreibende Variablen
 
 ### Nachteile
 
-* Alternativ kann ein Kommentar die If-Bedingung beschreiben, aber bei einer Änderung muss daran gedacht werden auch den Kommentar anzupassen.
-* Das Auslagern von Bedingungen in temporäre Variablen kann zu einem erhöhten Speicherverbrauch führen, insbesondere bei komplexen Ausdrücken. Dies ist normalerweise vernachlässigbar, kann jedoch in speziellen Situationen berücksichtigt werden. Der Compiler optimiert den Code in der Regel aber so, dass keine zusätzlichen Variablen im Bytecode erzeugt werden.
+- Alternativ kann ein Kommentar die If-Bedingung beschreiben, aber bei einer Änderung muss daran gedacht werden auch den Kommentar anzupassen.
+- Das Auslagern von Bedingungen in temporäre Variablen kann zu einem erhöhten Speicherverbrauch führen, insbesondere bei komplexen Ausdrücken. Dies ist normalerweise vernachlässigbar, kann jedoch in speziellen Situationen berücksichtigt werden. Der Compiler optimiert den Code in der Regel aber so, dass keine zusätzlichen Variablen im Bytecode erzeugt werden.
 
 ### Ausnahmen
 
@@ -1077,11 +1076,11 @@ Um die Lesbarkeit und Verständlichkeit des Codes zu verbessern, sollten Methode
 
 Allgemeine Code-Refactorings sind:
 
-* Code-Blöcke oder Scopes (durch geschweifte Klammern separiert) können in Methoden ausgelagert werden.
-* Kommentare, die eine Sektion kommentieren, können im Allgemeinen in eine Methode ausgelagert werden.
-* For-Schleifen, welche If-Bedingungen beinhalten, können als Methode geschrieben werden.
-* Mehrdimensionale For-Schleifen können in Methoden ausgelagert werden,
-* If-Bedingungen innerhalb einer Methode können als Methode geschrieben werden.
+- Code-Blöcke oder Scopes (durch geschweifte Klammern separiert) können in Methoden ausgelagert werden.
+- Kommentare, die eine Sektion kommentieren, können im Allgemeinen in eine Methode ausgelagert werden.
+- For-Schleifen, welche If-Bedingungen beinhalten, können als Methode geschrieben werden.
+- Mehrdimensionale For-Schleifen können in Methoden ausgelagert werden,
+- If-Bedingungen innerhalb einer Methode können als Methode geschrieben werden.
 
 ```java
 public void processUserData(User user) {
@@ -1129,7 +1128,7 @@ private void saveUser(User user) {
 
 ### Vorteile
 
-* 1. **KISS-Prinzip**: Das KISS-Prinzip kann leichter eingehalten werden, wenn Methoden und Funktionen auf eine begrenzte Anzahl von Zeilen beschränkt sind. Der Entwickler kommt nicht dazu überkomplexe Methoden zu schreiben, da er sich an die Zeilenbeschränkung halten muss.
+1. **KISS-Prinzip**: Das KISS-Prinzip kann leichter eingehalten werden, wenn Methoden und Funktionen auf eine begrenzte Anzahl von Zeilen beschränkt sind. Der Entwickler kommt nicht dazu überkomplexe Methoden zu schreiben, da er sich an die Zeilenbeschränkung halten muss.
 
 2. **Bessere Isolierung**: Kleine Methoden behandeln normalerweise nur eine spezifische Aufgabe oder Verantwortlichkeit. Dadurch können sie isoliert und unabhängig von anderen Teilen des Codes getestet werden. Durch die Fokussierung auf eine spezifische Funktion können Tests effektiver und einfacher geschrieben werden.
 
@@ -1149,7 +1148,7 @@ Die Verwendung kleiner Methoden verbessert die Qualität und Wartbarkeit des Cod
 
 ### Nachteile
 
-* Die strikte Begrenzung der Zeilenanzahl kann zu einer übermäßigen Fragmentierung des Codes führen, wenn kleinere Methoden oder Funktionen unnötig erstellt werden.
+- Die strikte Begrenzung der Zeilenanzahl kann zu einer übermäßigen Fragmentierung des Codes führen, wenn kleinere Methoden oder Funktionen unnötig erstellt werden.
 
 ### Ausnahmen
 
@@ -1157,9 +1156,9 @@ Die Anzahl der Codezeilen in einer Methode oder Funktion kann je nach Kontext un
 
 ### Weiterführende Literatur/Links
 
-* [Clean Code: A Handbook of Agile Software Craftsmanship](https://www.amazon.com/dp/0132350882)
-* [Refactoring: Improving the Design of Existing Code](https://www.amazon.com/dp/0201485672)
-* [Effective JavaScript: 68 Specific Ways to Harness the Power of JavaScript](https://www.amazon.com/dp/0321812182)
+- [Clean Code: A Handbook of Agile Software Craftsmanship](https://www.amazon.com/dp/0132350882)
+- [Refactoring: Improving the Design of Existing Code](https://www.amazon.com/dp/0201485672)
+- [Effective JavaScript: 68 Specific Ways to Harness the Power of JavaScript](https://www.amazon.com/dp/0321812182)
 
 ## J015 Verwendung von Optional als Funktionswert
 
@@ -1195,14 +1194,14 @@ public Optional<String> getUserName() {
 
 ### Vorteile
 
-* Klarere Aussage über die Möglichkeit eines fehlenden Werts
-* Vermeidung von NullPointerExceptions
-* Zwingt Entwickler dazu, explizit mit dem möglichen Fehlen des Werts umzugehen
-* IDE unterstützt die Verwendung von `Optional` und zeigt Warnungen an, wenn der Rückgabewert nicht richtig behandelt wird.
+- Klarere Aussage über die Möglichkeit eines fehlenden Werts
+- Vermeidung von NullPointerExceptions
+- Zwingt Entwickler dazu, explizit mit dem möglichen Fehlen des Werts umzugehen
+- IDE unterstützt die Verwendung von `Optional` und zeigt Warnungen an, wenn der Rückgabewert nicht richtig behandelt wird.
 
 ### Nachteile
 
-* Erfordert, dass Entwickler den `Optional`-Typ verstehen und richtig damit umgehen
+- Erfordert, dass Entwickler den `Optional`-Typ verstehen und richtig damit umgehen
 
 ### Ausnahmen
 
@@ -1248,13 +1247,13 @@ public int calculate(int x) {
 
 ### Vorteile
 
-* Verbesserte Lesbarkeit und Klarheit des Codes
-* Reduzierung der Verschachtelung von Bedingungen
-* Vereinfachte Struktur und Fluss des Codes
+- Verbesserte Lesbarkeit und Klarheit des Codes
+- Reduzierung der Verschachtelung von Bedingungen
+- Vereinfachte Struktur und Fluss des Codes
 
 ### Ausnahmen
 
-* Es kann Ausnahmen geben, in denen ein else-Block sinnvoll ist, um zusätzliche Logik auszuführen, die nicht direkt mit der Bedingung und dem Rückgabewert zusammenhängt.
+- Es kann Ausnahmen geben, in denen ein else-Block sinnvoll ist, um zusätzliche Logik auszuführen, die nicht direkt mit der Bedingung und dem Rückgabewert zusammenhängt.
 
 ### Weiterführende Literatur/Links
 
@@ -1295,8 +1294,8 @@ MessageFormat.format("Name: {0}, Age: {1}", name, age)
 
 ### Weiterführende Literatur/Links
 
-* [SLF4J Documentation](http://www.slf4j.org/manual.html)
-* [Best Practices for Logging in Java](https://stackify.com/best-practices-logging-java/)
+- [SLF4J Documentation](http://www.slf4j.org/manual.html)
+- [Best Practices for Logging in Java](https://stackify.com/best-practices-logging-java/)
 
 ## J018 Rückgabe von nur unveränderlichen (immutable) Objekten in Java-Methoden
 
@@ -1325,9 +1324,9 @@ public List<String> getNames() {
 
 ### Vorteile
 
-* Vermeidung unerwarteter Seiteneffekte durch Änderungen des zurückgegebenen Objekts
-* Sicherstellung der Integrität der Daten und des Zustands
-* Bessere Wartbarkeit und Testbarkeit des Codes
+- Vermeidung unerwarteter Seiteneffekte durch Änderungen des zurückgegebenen Objekts
+- Sicherstellung der Integrität der Daten und des Zustands
+- Bessere Wartbarkeit und Testbarkeit des Codes
 
 ### Ausnahmen
 
@@ -1335,14 +1334,14 @@ Es kann Situationen geben, in denen die Rückgabe eines veränderbaren Objekts e
 
 ### Weiterführende Literatur/Links
 
-* [Effective Java: Item 15 - Minimize Mutability](https://www.amazon.com/dp/0321356683)
-* [Immutable Objects in Java](https://www.baeldung.com/java-immutable-object)
+- [Effective Java: Item 15 - Minimize Mutability](https://www.amazon.com/dp/0321356683)
+- [Immutable Objects in Java](https://www.baeldung.com/java-immutable-object)
 
 ## J019 Methoden/Funktionen sollten niemals null zurückgeben, sondern immer eine leere Liste, HashMap oder Array
 
 Es ist eine bewährte Praxis in Java und JavaScript, dass Methoden/Funktionen, die Listen, Hashmaps oder Arrays zurückgeben, niemals null zurückgeben sollten. Stattdessen sollte immer eine leere Liste, HashMap oder ein leeres Array zurückgegeben werden.
 
-> Alternativ kann auch [Verwendung von Optional als Funktionswert](#verwendung-von-optional-als-funktionswert) angewendet werden.
+> Alternativ kann auch [Verwendung von Optional als Funktionswert](#j015-verwendung-von-optional-als-funktionswert) angewendet werden.
 
 ### Problem
 
@@ -1374,9 +1373,9 @@ public List<String> getNames() {
 
 ### Vorteile
 
-* Vermeidung von NullPointerExceptions und unerwartetem Verhalten
-* Einfachere Handhabung und weniger Überprüfungen auf null im Aufrufercode
-* Verbesserte Robustheit und Stabilität des Codes
+- Vermeidung von NullPointerExceptions und unerwartetem Verhalten
+- Einfachere Handhabung und weniger Überprüfungen auf null im Aufrufercode
+- Verbesserte Robustheit und Stabilität des Codes
 
 ### Ausnahmen
 
@@ -1385,9 +1384,9 @@ In solchen Fällen ist es wichtig, die Risiken und Vorteile sorgfältig abzuwäg
 
 ### Weiterführende Literatur/Links
 
-* [Effective Java: Item 54 - Return Empty Arrays or Collections, Not Nulls](https://www.amazon.com/dp/0321356683)
-* [Null or Empty Collection in Java](https://www.baeldung.com/java-null-empty-collection) (für Java)
-* [Avoiding Null in JavaScript](https://dmitripavlutin.com/avoid-null-undefined-javascript/) (für JavaScript)
+- [Effective Java: Item 54 - Return Empty Arrays or Collections, Not Nulls](https://www.amazon.com/dp/0321356683)
+- [Null or Empty Collection in Java](https://www.baeldung.com/java-null-empty-collection) (für Java)
+- [Avoiding Null in JavaScript](https://dmitripavlutin.com/avoid-null-undefined-javascript/) (für JavaScript)
 
 ## J020 Verwendung von `computeIfAbsent` und `putIfAbsent` für HashMaps in Java
 
@@ -1427,20 +1426,20 @@ defaultList.add(value);
 
 ### Vorteile
 
-* Vermeidung von Race Conditions und unerwarteten Überschreibungen von Werten in HashMaps
-* Einfachere und sicherere Handhabung beim Hinzufügen von Werten zu einem Schlüssel, wenn der Schlüssel nicht vorhanden ist
-* Verbesserte Effizienz und Lesbarkeit des Codes
+- Vermeidung von Race Conditions und unerwarteten Überschreibungen von Werten in HashMaps
+- Einfachere und sicherere Handhabung beim Hinzufügen von Werten zu einem Schlüssel, wenn der Schlüssel nicht vorhanden ist
+- Verbesserte Effizienz und Lesbarkeit des Codes
 
 ### Nachteile
 
-* `computeIfAbsent` und `putIfAbsent` verhalten sich unterschiedlich in Bezug auf den Rückgabewert.
+- `computeIfAbsent` und `putIfAbsent` verhalten sich unterschiedlich in Bezug auf den Rückgabewert.
 `putIfAbsent` liefert als Rückgabe den vorherigen Wert, während `computeIfAbsent` den berechneten (computed) zurückgibt.
 Damit ist es mit `computeIfAbsent` möglich einen Wert mit `add` sofort hinzuzufügen, während dies mit `putIfAbsent` nicht funktioniert.
 
 ### Weiterführende Literatur/Links
 
-* [HashMap computeIfAbsent() method in Java with examples](https://www.geeksforgeeks.org/hashmap-computeifabsent-method-in-java-with-examples/)
-* [HashMap putIfAbsent(key, value) method in Java with examples](https://www.geeksforgeeks.org/hashmap-putifabsentkey-value-method-in-java-with-examples/)
+- [HashMap computeIfAbsent() method in Java with examples](https://www.geeksforgeeks.org/hashmap-computeifabsent-method-in-java-with-examples/)
+- [HashMap putIfAbsent(key, value) method in Java with examples](https://www.geeksforgeeks.org/hashmap-putifabsentkey-value-method-in-java-with-examples/)
 
 ## J021 Verwendung von `com.machinezoo.noexception` in Callbacks wie z.B. `forEach` in Java
 
@@ -1487,14 +1486,14 @@ list.forEach(Exceptions.sneak().consumer(item -> {
 
 ### Vorteile
 
-* Reduzierung des Boilerplate-Codes durch die Verwendung von `com.machinezoo.noexception`
-* Sauberer und lesbarer Code ohne zusätzliche `try-catch`-Blöcke in Callback-Funktionen
-* Bessere Trennung von Geschäftslogik und Ausnahmebehandlung
+- Reduzierung des Boilerplate-Codes durch die Verwendung von `com.machinezoo.noexception`
+- Sauberer und lesbarer Code ohne zusätzliche `try-catch`-Blöcke in Callback-Funktionen
+- Bessere Trennung von Geschäftslogik und Ausnahmebehandlung
 
 ### Nachteile
 
-* Einführung einer zusätzlichen Abhängigkeit durch die Verwendung von `com.machinezoo.noexception`
-* Erhöhte Komplexität des Codes durch die Verwendung von Hilfsmethoden
+- Einführung einer zusätzlichen Abhängigkeit durch die Verwendung von `com.machinezoo.noexception`
+- Erhöhte Komplexität des Codes durch die Verwendung von Hilfsmethoden
 
 ### Ausnahmen
 
@@ -1502,12 +1501,13 @@ Es kann Situationen geben, in denen die Verwendung von `com.machinezoo.noexcepti
 
 ### Weiterführende Literatur/Links
 
-* [com.machinezoo.noexception - GitHub](https://github.com/robertvazan/com.machinezoo.noexception)
-* [Avoiding Exceptions in Callbacks](https://dzone.com/articles/avoiding-exceptions-in-callbacks)
+- [com.machinezoo.noexception - GitHub](https://github.com/robertvazan/com.machinezoo.noexception)
+- [Avoiding Exceptions in Callbacks](https://dzone.com/articles/avoiding-exceptions-in-callbacks)
 
 ## J022 Kapselung von API-Methoden zur Vereinfachung und besseren Testbarkeit
 
 ### Problem
+
 API-Methoden können oft komplexe Logik benötigen, um beispielsweise Datenumwandlungen oder Filterungen für die Eingabeparameter und Resultate durchzuführen. Wenn diese Komplexität für die API-Methode notwendig ist und direkt in der eigenen Methode angwendet wird, kann dies zu unübersichtlichem Code und Schwierigkeiten bei der Testbarkeit führen. Darüber hinaus kann es erforderlich sein, die API-Methode in Tests zu mocken, was zu erhöhtem Aufwand führt.
 
 ```java
@@ -1555,4 +1555,5 @@ public List<String> getActiveUsers(List<Integer> userIds) {
 In bestimmten Fällen kann es aus Performance-Gründen oder aufgrund von spezifischen Anforderungen notwendig sein, die Komplexität direkt in der API-Methode zu belassen. In solchen Fällen sollte jedoch sorgfältig abgewogen werden, ob die Vorteile der Kapselung überwiegen.
 
 ### Weiterführende Literatur/Links
+
 - [Clean Code: A Handbook of Agile Software Craftsmanship by Robert C. Martin](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882)
