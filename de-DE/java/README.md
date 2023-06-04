@@ -3,27 +3,27 @@
 - [Best Practices und Design Patterns](#best-practices-und-design-patterns)
   - [Allgemein](#allgemein)
   - [J001 Linter verwenden](#j001-linter-verwenden)
-  - [Verwendung von Exceptions](#verwendung-von-exceptions)
-  - [Exceptions dürfen nur abgefangen und in speziellere Exceptions wieder geworfen werden](#exceptions-dürfen-nur-abgefangen-und-in-speziellere-exceptions-wieder-geworfen-werden)
-  - [Exceptions dürfen nur geloggt werden, wenn sie nicht geworfen werden](#exceptions-dürfen-nur-geloggt-werden-wenn-sie-nicht-geworfen-werden)
-  - [Attribute nur mit protected Sichtbarkeit versehen](#attribute-nur-mit-protected-sichtbarkeit-versehen)
-  - [Attribute komplexer Typen sollten nicht mit Getter und Setter veröffentlicht werden](#attribute-komplexer-typen-sollten-nicht-mit-getter-und-setter-veröffentlicht-werden)
-  - [Stream-API verwenden](#stream-api-verwenden)
-  - [JavaDoc-Kommentierung im Code](#javadoc-kommentierung-im-code)
-  - [JetBrains Annotations](#jetbrains-annotations)
-  - [Eingabeprüfungen in REST-API mit Annotation](#eingabeprüfungen-in-rest-api-mit-annotation)
-  - [Final für alle Attribute, Variablen und Parameter verwenden](#final-für-alle-attribute-variablen-und-parameter-verwenden)
-  - [Guard Pattern in Java](#guard-pattern-in-java)
-  - [Positiv formulierte If-Bedingungen und Auslagerung komplexer Bedingungen](#positiv-formulierte-if-bedingungen-und-auslagerung-komplexer-bedingungen)
-  - [Anzahl von Codezeilen in Methoden und Funktionen begrenzen](#anzahl-von-codezeilen-in-methoden-und-funktionen-begrenzen)
-  - [Verwendung von Optional als Funktionswert](#verwendung-von-optional-als-funktionswert)
-  - [If-Bedingungen ohne Else und mit Return](#if-bedingungen-ohne-else-und-mit-return)
-  - [Richtiges Verwenden von Platzhaltern beim Logging mit SLF4J](#richtiges-verwenden-von-platzhaltern-beim-logging-mit-slf4j)
-  - [Rückgabe von nur unveränderlichen (immutable) Objekten in Java-Methoden](#rückgabe-von-nur-unveränderlichen-immutable-objekten-in-java-methoden)
-  - [Methoden/Funktionen sollten niemals null zurückgeben, sondern immer eine leere Liste, HashMap oder Array](#methodenfunktionen-sollten-niemals-null-zurückgeben-sondern-immer-eine-leere-liste-hashmap-oder-array)
-  - [Verwendung von `computeIfAbsent` und `putIfAbsent` für HashMaps in Java](#verwendung-von-computeifabsent-und-putifabsent-für-hashmaps-in-java)
-  - [Verwendung von `com.machinezoo.noexception` in Callbacks wie z.B. `forEach` in Java](#verwendung-von-commachinezoonoexception-in-callbacks-wie-zb-foreach-in-java)
-  - [Kapselung von API-Methoden zur Vereinfachung und besseren Testbarkeit](#kapselung-von-api-methoden-zur-vereinfachung-und-besseren-testbarkeit)
+  - [J002 Verwendung von Exceptions](#j002-verwendung-von-exceptions)
+  - [J003 Exceptions dürfen nur abgefangen und in speziellere Exceptions wieder geworfen werden](#j003-exceptions-dürfen-nur-abgefangen-und-in-speziellere-exceptions-wieder-geworfen-werden)
+  - [J004 Exceptions dürfen nur geloggt werden, wenn sie nicht geworfen werden](#j004-exceptions-dürfen-nur-geloggt-werden-wenn-sie-nicht-geworfen-werden)
+  - [J005 Attribute nur mit protected Sichtbarkeit versehen](#j005-attribute-nur-mit-protected-sichtbarkeit-versehen)
+  - [J006 Attribute komplexer Typen sollten nicht mit Getter und Setter veröffentlicht werden](#j006-attribute-komplexer-typen-sollten-nicht-mit-getter-und-setter-veröffentlicht-werden)
+  - [J007 Stream-API verwenden](#j007-stream-api-verwenden)
+  - [J008 JavaDoc-Kommentierung im Code](#j008-javadoc-kommentierung-im-code)
+  - [J009 JetBrains Annotations](#j009-jetbrains-annotations)
+  - [J010 Eingabeprüfungen in REST-API mit Annotation](#j010-eingabeprüfungen-in-rest-api-mit-annotation)
+  - [J011 Final für alle Attribute, Variablen und Parameter verwenden](#j011-final-für-alle-attribute-variablen-und-parameter-verwenden)
+  - [J012 Guard Pattern in Java](#j012-guard-pattern-in-java)
+  - [J013 Positiv formulierte If-Bedingungen und Auslagerung komplexer Bedingungen](#j013-positiv-formulierte-if-bedingungen-und-auslagerung-komplexer-bedingungen)
+  - [J014 Anzahl von Codezeilen in Methoden und Funktionen begrenzen](#j014-anzahl-von-codezeilen-in-methoden-und-funktionen-begrenzen)
+  - [J015 Verwendung von Optional als Funktionswert](#j015-verwendung-von-optional-als-funktionswert)
+  - [J016 If-Bedingungen ohne Else und mit Return](#j016-if-bedingungen-ohne-else-und-mit-return)
+  - [J017 Richtiges Verwenden von Platzhaltern beim Logging mit SLF4J](#j017-richtiges-verwenden-von-platzhaltern-beim-logging-mit-slf4j)
+  - [J018 Rückgabe von nur unveränderlichen (immutable) Objekten in Java-Methoden](#j018-rückgabe-von-nur-unveränderlichen-immutable-objekten-in-java-methoden)
+  - [J019 Methoden/Funktionen sollten niemals null zurückgeben, sondern immer eine leere Liste, HashMap oder Array](#j019-methodenfunktionen-sollten-niemals-null-zurückgeben-sondern-immer-eine-leere-liste-hashmap-oder-array)
+  - [J020 Verwendung von `computeIfAbsent` und `putIfAbsent` für HashMaps in Java](#j020-verwendung-von-computeifabsent-und-putifabsent-für-hashmaps-in-java)
+  - [J021 Verwendung von `com.machinezoo.noexception` in Callbacks wie z.B. `forEach` in Java](#j021-verwendung-von-commachinezoonoexception-in-callbacks-wie-zb-foreach-in-java)
+  - [J022 Kapselung von API-Methoden zur Vereinfachung und besseren Testbarkeit](#j022-kapselung-von-api-methoden-zur-vereinfachung-und-besseren-testbarkeit)
 
 ## Allgemein
 
@@ -136,7 +136,7 @@ Es ist empfehlenswert, mehrere Linter-Tools in Kombination zu verwenden, um eine
 - SonarLint
 - Linter von Jetbrains
 
-## Verwendung von Exceptions
+## J002 Verwendung von Exceptions
 
 Exceptions sollten in Java nur für unerwartete Situationen verwendet werden, um eine saubere Trennung von Fehlerbehandlung und regulärem Code zu ermöglichen.
 
@@ -196,7 +196,7 @@ public void calculatePrice(int quantity) throws InvalidQuantityException {
 - Eine übermäßige Verwendung von Exceptions kann die Leistung beeinträchtigen und die Lesbarkeit des Codes erschweren (Exceptions innerhalb von for-Schleifen.).
 - Es kann schwierig sein, zwischen erwarteten und unerwarteten Situationen zu unterscheiden, was zu Fehlern führen kann, wenn Ausnahmen falsch verwendet werden.
 
-## Exceptions dürfen nur abgefangen und in speziellere Exceptions wieder geworfen werden
+## J003 Exceptions dürfen nur abgefangen und in speziellere Exceptions wieder geworfen werden
 
 Exceptions sollten in speziellere Exceptions (Typed Exceptions) umgewandelt und abgefangen werden, um sie an höhere Ebenen weiterzugeben.
 Dies erleichtert das Debugging, da der Fehlersachverhalt über den Exception-Typ deutlich gemacht wird.
@@ -256,7 +256,7 @@ public void readFromFile(String filePath) throws IOException {
 Es gibt Situationen, in denen es nicht sinnvoll ist, Exceptions in speziellere Exceptions umzuwandeln, z.B. wenn es darum geht, Fehler zu ignorieren oder nicht weiterzugeben.
 In solchen Fällen sollte jedoch darauf geachtet werden, dass dies dokumentiert und klar verständlich ist.
 
-## Exceptions dürfen nur geloggt werden, wenn sie nicht geworfen werden
+## J004 Exceptions dürfen nur geloggt werden, wenn sie nicht geworfen werden
 
 Exceptions sollten nur dann geloggt werden, wenn sie nicht an höhere Ebenen weitergegeben werden und keine Auswirkungen auf den weiteren Ablauf des Programms haben.
 
@@ -314,7 +314,7 @@ public void readFromFile(String filePath) throws IOException {
 In manchen Fällen für Debugging kann es sinnvoll sein, Exceptions auszuloggen, bevor sie an höhere Ebenen weitergegeben werden, um mehr Informationen über den Fehler zu sammeln.
 In solchen Fällen sollte jedoch darauf geachtet werden, dass keine vertraulichen Informationen offengelegt werden und dass die Exception nicht einfach nur ignoriert wird.
 
-## Attribute nur mit protected Sichtbarkeit versehen
+## J005 Attribute nur mit protected Sichtbarkeit versehen
 
 ### Problem
 
@@ -349,7 +349,7 @@ Durch die Verwendung von `protected` Sichtbarkeit können Testfälle geschrieben
 Es ist jedoch zu beachten, dass die Verwendung von `protected` Sichtbarkeit zu einer Verminderung der Abstraktion und Kapselung von Daten führen kann.
 Es sollte nur dann `protected` Sichtbarkeit verwendet werden, wenn es wirklich notwendig ist, um die Testbarkeit zu erleichtern, und wenn es keine anderen Möglichkeiten gibt, die Testbarkeit der Klasse zu gewährleisten.
 
-## Attribute komplexer Typen sollten nicht mit Getter und Setter veröffentlicht werden
+## J006 Attribute komplexer Typen sollten nicht mit Getter und Setter veröffentlicht werden
 
 ### Problem
 
@@ -422,7 +422,7 @@ Stattdessen sollten notwendige Methoden über das Parent-Objekt bereitgestellt w
 Es kann jedoch Fälle geben, in denen die Verwendung von Getter- und Setter-Methoden sinnvoll ist, z.B. wenn das Attribut nicht referenzierbare Objekte enthält oder wenn das Attribut geändert werden kann, ohne dass Inkonsistenzen entstehen.
 Es ist daher wichtig, die Verwendung von Getter- und Setter-Methoden sorgfältig zu prüfen und nur dann zu verwenden, wenn es notwendig und sinnvoll ist.
 
-## Stream-API verwenden
+## J007 Stream-API verwenden
 
 ### Problem
 
@@ -478,7 +478,7 @@ Es kann jedoch Fälle geben, in denen die Verwendung von Schleifen und Iteratore
 z.B. wenn es sich um eine einfache Iteration ohne komplexe Filter- oder Transformationsoperationen handelt oder wenn es notwendig ist, auf Elemente in einer bestimmten Reihenfolge zuzugreifen.
 Es ist daher wichtig, die Verwendung von Stream-Operationen sorgfältig zu prüfen und nur dann zu verwenden, wenn es notwendig und sinnvoll ist.
 
-## JavaDoc-Kommentierung im Code
+## J008 JavaDoc-Kommentierung im Code
 
 ### Problem
 
@@ -548,7 +548,7 @@ Durch das Hinzufügen von JavaDoc-Kommentaren können andere Entwickler den Code
 Es gibt keine Ausnahmen von der Verwendung von JavaDoc, da es eine bewährte Methode ist, um den Code zu dokumentieren und seine Lesbarkeit und Wartbarkeit zu verbessern.
 Allerdings können JavaDoc-Kommentare zu einem höheren Aufwand führen, insbesondere in kleineren Codeprojekten oder in Projekten, die nur von einem einzigen Entwickler gewartet werden.
 
-## JetBrains Annotations
+## J009 JetBrains Annotations
 
 ### Problem
 
@@ -678,7 +678,7 @@ Andere mögliche [Annotations-Typen von Jetbrains](https://javadoc.io/doc/org.je
 - JetBrains Annotations Dokumentation: <https://www.jetbrains.com/help/idea/nullable-and-notnull-annotations.html>
 - "Effective Java" von Joshua Bloch: Ein Buch, das die Verwendung von Annotations in Java detailliert beschreibt.
 
-## Eingabeprüfungen in REST-API mit Annotation
+## J010 Eingabeprüfungen in REST-API mit Annotation
 
 ### Problem
 
@@ -802,7 +802,7 @@ Der `productId`-Parameter muss eine ganze Zahl sein.
 - [Java EE 7 Tutorial: Using Path Parameters](https://docs.oracle.com/javaee/7/tutorial/jaxrs-advanced004.htm)
 - [Java EE 7 Tutorial: Using Query Parameters](https://docs.oracle.com/javaee/7/tutorial/jax)
 
-## Final für alle Attribute, Variablen und Parameter verwenden
+## J011 Final für alle Attribute, Variablen und Parameter verwenden
 
 ### Problem
 
@@ -922,7 +922,7 @@ public void calculateTotalPrice(final double basePrice, final double discountRat
 * In manchen Fällen kann es sinnvoll sein, Variablen, Attribute oder Parameter nicht als `final` zu deklarieren, wenn sich der Wert häufig ändern muss oder wenn es aus anderen Gründen sinnvoll erscheinen (Legacy Code).
 In diesen Fällen sollte die Variable mit `/*nonfinal*/` oder Ähnlichem kommentiert werden.
 
-## Guard Pattern in Java
+## J012 Guard Pattern in Java
 
 Das Guard Pattern ist eine bewährte Praxis, um die Lesbarkeit und Robustheit von Code zu verbessern, insbesondere bei Bedingungsprüfungen in Java. Dabei werden Methoden frühzeitig beendet, wenn eine Bedingung nicht erfüllt ist.
 
@@ -972,7 +972,7 @@ Das Guard Pattern sollte nicht blindlings auf jede Bedingungsprüfung angewendet
 
 - [Guard Clause - Martin Fowler](https://martinfowler.com/bliki/GuardClause.html)
 
-## Positiv formulierte If-Bedingungen und Auslagerung komplexer Bedingungen
+## J013 Positiv formulierte If-Bedingungen und Auslagerung komplexer Bedingungen
 
 Positiv formulierte If-Bedingungen und die Auslagerung komplexer Bedingungen in temporäre Variablen verbessern die Lesbarkeit und Wartbarkeit des Codes. Einfache Bedingungen sind leichter zu verstehen und benötigen keine Kommentare, um ihre Funktionsweise zu erklären. Die Funktionsweise wird auch durch selbstsprechende Variablennamen deutlich.
 
@@ -1022,7 +1022,7 @@ Es gibt Fälle, in denen das Auslagern von Bedingungen in temporäre Variablen n
 - [The Art of Readable Code - Simple Conditionals](https://www.amazon.com/dp/0596802293)
 - [Clean Code: A Handbook of Agile Software Craftsmanship](https://www.amazon.com/dp/0132350882)
 
-## Anzahl von Codezeilen in Methoden und Funktionen begrenzen
+## J014 Anzahl von Codezeilen in Methoden und Funktionen begrenzen
 
 Die Begrenzung der Anzahl von Codezeilen in Methoden und Funktionen verbessert die Lesbarkeit, Wartbarkeit und Verständlichkeit des Codes.
 Es ermöglicht auch eine bessere Testbarkeit des Codes.
@@ -1161,7 +1161,7 @@ Die Anzahl der Codezeilen in einer Methode oder Funktion kann je nach Kontext un
 * [Refactoring: Improving the Design of Existing Code](https://www.amazon.com/dp/0201485672)
 * [Effective JavaScript: 68 Specific Ways to Harness the Power of JavaScript](https://www.amazon.com/dp/0321812182)
 
-## Verwendung von Optional als Funktionswert
+## J015 Verwendung von Optional als Funktionswert
 
 ### Problem
 
@@ -1214,7 +1214,7 @@ Das Refactoring von Legacy-Methoden, kann ebenfalls schwierig sein, da die Verwe
 - [Effective Java: Third Edition](https://www.amazon.com/dp/0134685997)
 - [Java Optional - Oracle Documentation](https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/Optional.html)
 
-## If-Bedingungen ohne Else und mit Return
+## J016 If-Bedingungen ohne Else und mit Return
 
 If-Bedingungen, die ein Return enthalten, sollten kein else enthalten, um die Lesbarkeit des Codes zu verbessern und die Verschachtelung von Bedingungen zu reduzieren.
 
@@ -1261,7 +1261,7 @@ public int calculate(int x) {
 - [Clean Code: A Handbook of Agile Software Craftsmanship](https://www.amazon.com/dp/0132350882)
 - [JavaScript: The Good Parts](https://www.amazon.com/dp/0596517742)
 
-## Richtiges Verwenden von Platzhaltern beim Logging mit SLF4J
+## J017 Richtiges Verwenden von Platzhaltern beim Logging mit SLF4J
 
 Beim Logging mit SLF4J ist es wichtig, die Platzhalter-Zeichen korrekt zu verwenden und nicht mit den Platzhaltern von String.Format zu verwechseln. Leider ist in Java ein Verwechseln von Platzhaltern möglich, wenn man nicht aufpasst.
 
@@ -1298,7 +1298,7 @@ MessageFormat.format("Name: {0}, Age: {1}", name, age)
 * [SLF4J Documentation](http://www.slf4j.org/manual.html)
 * [Best Practices for Logging in Java](https://stackify.com/best-practices-logging-java/)
 
-## Rückgabe von nur unveränderlichen (immutable) Objekten in Java-Methoden
+## J018 Rückgabe von nur unveränderlichen (immutable) Objekten in Java-Methoden
 
 Es ist eine bewährte Praxis, dass Methoden in Java nur unveränderliche (immutable) Objekte zurückgeben sollten.
 Dadurch wird sichergestellt, dass der Zustand des zurückgegebenen Objekts nicht versehentlich geändert werden kann.
@@ -1338,7 +1338,7 @@ Es kann Situationen geben, in denen die Rückgabe eines veränderbaren Objekts e
 * [Effective Java: Item 15 - Minimize Mutability](https://www.amazon.com/dp/0321356683)
 * [Immutable Objects in Java](https://www.baeldung.com/java-immutable-object)
 
-## Methoden/Funktionen sollten niemals null zurückgeben, sondern immer eine leere Liste, HashMap oder Array
+## J019 Methoden/Funktionen sollten niemals null zurückgeben, sondern immer eine leere Liste, HashMap oder Array
 
 Es ist eine bewährte Praxis in Java und JavaScript, dass Methoden/Funktionen, die Listen, Hashmaps oder Arrays zurückgeben, niemals null zurückgeben sollten. Stattdessen sollte immer eine leere Liste, HashMap oder ein leeres Array zurückgegeben werden.
 
@@ -1389,7 +1389,7 @@ In solchen Fällen ist es wichtig, die Risiken und Vorteile sorgfältig abzuwäg
 * [Null or Empty Collection in Java](https://www.baeldung.com/java-null-empty-collection) (für Java)
 * [Avoiding Null in JavaScript](https://dmitripavlutin.com/avoid-null-undefined-javascript/) (für JavaScript)
 
-## Verwendung von `computeIfAbsent` und `putIfAbsent` für HashMaps in Java
+## J020 Verwendung von `computeIfAbsent` und `putIfAbsent` für HashMaps in Java
 
 Es ist eine bewährte Praxis, die Methoden `computeIfAbsent` und `putIfAbsent` für HashMaps in Java zu verwenden. Diese Methoden bieten eine sicherere und effizientere Möglichkeit, Werte zu einem Schlüssel hinzuzufügen, wenn der Schlüssel nicht vorhanden ist.
 
@@ -1442,7 +1442,7 @@ Damit ist es mit `computeIfAbsent` möglich einen Wert mit `add` sofort hinzuzuf
 * [HashMap computeIfAbsent() method in Java with examples](https://www.geeksforgeeks.org/hashmap-computeifabsent-method-in-java-with-examples/)
 * [HashMap putIfAbsent(key, value) method in Java with examples](https://www.geeksforgeeks.org/hashmap-putifabsentkey-value-method-in-java-with-examples/)
 
-## Verwendung von `com.machinezoo.noexception` in Callbacks wie z.B. `forEach` in Java
+## J021 Verwendung von `com.machinezoo.noexception` in Callbacks wie z.B. `forEach` in Java
 
 Es ist eine bewährte Praxis in Java, die Bibliothek `com.machinezoo.noexception` zu verwenden, um die Verwendung von `try-catch`-Blöcken in Callback-Funktionen wie `forEach` zu reduzieren. Durch die Verwendung dieser Bibliothek wird der Code sauberer und lesbarer, da die Ausnahmebehandlung von Callbacks elegant behandelt wird.
 
@@ -1505,7 +1505,7 @@ Es kann Situationen geben, in denen die Verwendung von `com.machinezoo.noexcepti
 * [com.machinezoo.noexception - GitHub](https://github.com/robertvazan/com.machinezoo.noexception)
 * [Avoiding Exceptions in Callbacks](https://dzone.com/articles/avoiding-exceptions-in-callbacks)
 
-## Kapselung von API-Methoden zur Vereinfachung und besseren Testbarkeit
+## J022 Kapselung von API-Methoden zur Vereinfachung und besseren Testbarkeit
 
 ### Problem
 API-Methoden können oft komplexe Logik benötigen, um beispielsweise Datenumwandlungen oder Filterungen für die Eingabeparameter und Resultate durchzuführen. Wenn diese Komplexität für die API-Methode notwendig ist und direkt in der eigenen Methode angwendet wird, kann dies zu unübersichtlichem Code und Schwierigkeiten bei der Testbarkeit führen. Darüber hinaus kann es erforderlich sein, die API-Methode in Tests zu mocken, was zu erhöhtem Aufwand führt.
