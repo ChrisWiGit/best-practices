@@ -28,42 +28,78 @@
 ## Allgemein
 
 ### <a id="#a001">A001</a> Folgen des KISS-Prinzips (Keep it simple and stupid) 
+
 Die Entwicklung von Software sollte nicht der Selbstverwirklichung des Entwicklers dienen, sondern der Lösung eines Problems. Daher sollte Architektur, Code und Dokumentation so einfach wie möglich gehalten werden. Komplexe Lösungen sollten vermieden werden, wenn einfachere Lösungen möglich sind.
 
-### <a id="#a002">A002</a> **Folgen des DRY-Prinzips (Don't Repeat Yourself)**: Wird festgestellt, dass derselbe Code an mehreren Stellen verwendet wird, sollte in Betracht gezogen werden, diesen Code in eine Methode oder eine Klasse zu extrahieren und es dann jedes Mal zu verwenden, wenn es benötigt wird.
+### <a id="#a002">A002</a> Folgen des DRY-Prinzips (Don't Repeat Yourself)
 
-3. <a id="#a003">A003</a> **Konsistente Benennung von Variablen und Methoden**: Es sollte sichergestellt werden, dass die verwendeten Namen aussagekräftig sind und den Zweck des Codes genau beschreiben. Die Benennung sollte auch konsistent sein.
+Wird festgestellt, dass derselbe Code an mehreren Stellen verwendet wird, sollte in Betracht gezogen werden, diesen Code in eine Methode oder eine Klasse zu extrahieren und es dann jedes Mal zu verwenden, wenn es benötigt wird.
 
-4. <a id="#a004">A004</a> **Anwendung von neuen Java Features**: Mit Java 11 bis 17 stehen viele neue Möglichkeiten zur Verfügung, um den Code zu verbessern. Beispielsweise könnten Var-Typinferenz, Lambda-Ausdrücke und Streams, optionale Typen, neue Methoden für String-Verarbeitung, neue APIs für HTTP-Clients und vieles mehr verwendet werden, um den Code kürzer und leichter lesbar zu machen.
+### <a id="#a003">A003</a> Konsistente Benennung von Variablen und Methoden
 
-5. <a id="#a005">A005</a> **Vermeidung von tief verschachteltem Code**: Tief verschachtelter Code sollte vermieden werden, da er den Code schwer lesbar und wartbar macht. Die Verwendung von flachen Hierarchien und kurzen Methoden kann die Lesbarkeit und Wartbarkeit erheblich verbessern.
+Es sollte sichergestellt werden, dass die verwendeten Namen aussagekräftig sind und den Zweck des Codes genau beschreiben. Die Benennung sollte auch konsistent sein.
 
-6. <a id="#a006">A006</a> **Einsatz von Linter und Formatter**: Tools wie Checkstyle, PMD oder SpotBugs können dabei helfen, den Code konsistent und fehlerfrei zu halten.
+### <a id="#a004">A004</a> Anwendung von neuen Java Features
 
-7. <a id="#a007">A007</a> **Schreiben von Unit-Tests**: Guter refaktorierter Code sollte immer von Tests begleitet werden. Sie helfen dabei, sicherzustellen, dass der Code nach dem Refactoring immer noch wie erwartet funktioniert.
+Mit Java 11 bis 17 stehen viele neue Möglichkeiten zur Verfügung, um den Code zu verbessern. Beispielsweise könnten Var-Typinferenz, Lambda-Ausdrücke und Streams, optionale Typen, neue Methoden für String-Verarbeitung, neue APIs für HTTP-Clients und vieles mehr verwendet werden, um den Code kürzer und leichter lesbar zu machen.
 
-8. <a id="#a008">A008</a> **Anwendung Modulare Architektur**: Der Code sollte in kleinere, wiederverwendbare Klassen und Pakete aufgeteilt werden. Dies erhöht die Lesbarkeit und erleichtert die Wartung und das Testen.
+### <a id="#a005">A005</a> Vermeidung von tief verschachteltem Code
 
-9. <a id="#a009">A009</a> **Selbsterklärender Code**: Kommentare sollten vermieden werden, wo der Code selbst klar sein kann. Guter Code sollte größtenteils selbsterklärend sein.
+Tief verschachtelter Code sollte vermieden werden, da er den Code schwer lesbar und wartbar macht. Die Verwendung von flachen Hierarchien und kurzen Methoden kann die Lesbarkeit und Wartbarkeit erheblich verbessern.
 
-10. <a id="#a010">A010</a> **Anwendung des SOLID-Prinzips**: SOLID ist ein Akronym für fünf Prinzipien des objektorientierten Designs und der Programmierung, die dazu beitragen, dass der Code sauber, robust und wartbar bleibt.
+### <a id="#a006">A006</a> Einsatz von Linter und Formatter
 
-11. <a id="#a011">A011</a> **Performance-Optimierungen**: Auf teure Operationen wie ineffiziente Schleifen oder wiederholte Objektinstanziierungen sollte geachtet werden. Performance-Tools wie JProfiler oder VisualVM können genutzt werden, um Flaschenhälse zu identifizieren und zu beheben.  Zu beachten ist jedoch, dass Performance nur dann verbessert werden sollte, wenn es eine Evindenz dafür gibt, dass es notwendig ist. Ansonsten sollte der Code einfach und verständlich bleiben.
+Tools wie Checkstyle, PMD oder SpotBugs können dabei helfen, den Code konsistent und fehlerfrei zu halten.
 
-12. <a id="#a012">A012</a> **Anwendung Funktionale Programmierkonzepte**: Funktionale Programmierung kann dazu beitragen, dass der Code besser strukturiert und leichter zu testen ist. Konzepte wie Unveränderlichkeit (Immutability), Stream-Operationen und Lambda-Ausdrücke sind besonders nützlich in Java.
+### <a id="#a007">A007</a> Schreiben von Unit-Tests
 
-13. <a id="#a013">A013</a> **Fehlerbehandlung**: Es sollte sichergestellt werden, dass der Code ordnungsgemäß mit Fehlern umgeht. Dazu gehört das Werfen spezifischer benutzerdefinierter Ausnahmen, um den Fehlerzustand genau zu beschreiben. Weiterhin sollten `try/catch`-Blöcke und möglicherweise auch das `finally`-Keyword verwendet werden, um Fehler effektiv zu behandeln und Ressourcen ordnungsgemäß freizugeben.
+Guter refaktorierter Code sollte immer von Tests begleitet werden. Sie helfen dabei, sicherzustellen, dass der Code nach dem Refactoring immer noch wie erwartet funktioniert.
 
-14. <a id="#a014">A014</a> **Anwendung von Design Patterns**: Design Patterns bieten eine wiederverwendbare Vorlage zur Lösung von Softwareentwicklungsproblemen in einem bestimmten Kontext. Sie dienen dazu, den Code sauberer, effizienter und einfacher zu verstehen zu machen. Einige Beispiele für Design Patterns, die in Java häufig verwendet werden, sind:
+### <a id="#a008">A008</a> Anwendung Modulare Architektur
+
+Der Code sollte in kleinere, wiederverwendbare Klassen und Pakete aufgeteilt werden. Dies erhöht die Lesbarkeit und erleichtert die Wartung und das Testen.
+
+### <a id="#a009">A009</a> Selbsterklärender Code
+
+Kommentare sollten vermieden werden, wo der Code selbst klar sein kann. Guter Code sollte größtenteils selbsterklärend sein.
+
+### <a id="#a010">A010</a> Anwendung des SOLID-Prinzips
+
+SOLID ist ein Akronym für fünf Prinzipien des objektorientierten Designs und der Programmierung, die dazu beitragen, dass der Code sauber, robust und wartbar bleibt.
+
+### <a id="#a011">A011</a> Performance-Optimierungen
+
+Auf teure Operationen wie ineffiziente Schleifen oder wiederholte Objektinstanziierungen sollte geachtet werden. Performance-Tools wie JProfiler oder VisualVM können genutzt werden, um Flaschenhälse zu identifizieren und zu beheben.  Zu beachten ist jedoch, dass Performance nur dann verbessert werden sollte, wenn es eine Evindenz dafür gibt, dass es notwendig ist. Ansonsten sollte der Code einfach und verständlich bleiben.
+
+### <a id="#a012">A012</a> Anwendung Funktionale Programmierkonzepte
+
+Funktionale Programmierung kann dazu beitragen, dass der Code besser strukturiert und leichter zu testen ist. Konzepte wie Unveränderlichkeit (Immutability), Stream-Operationen und Lambda-Ausdrücke sind besonders nützlich in Java.
+
+### <a id="#a013">A013</a> Fehlerbehandlung
+
+Es sollte sichergestellt werden, dass der Code ordnungsgemäß mit Fehlern umgeht. Dazu gehört das Werfen spezifischer benutzerdefinierter Ausnahmen, um den Fehlerzustand genau zu beschreiben. Weiterhin sollten `try/catch`-Blöcke und möglicherweise auch das `finally`-Keyword verwendet werden, um Fehler effektiv zu behandeln und Ressourcen ordnungsgemäß freizugeben.
+
+### <a id="#a014">A014</a> Anwendung von Design Patterns
+
+Design Patterns bieten eine wiederverwendbare Vorlage zur Lösung von Softwareentwicklungsproblemen in einem bestimmten Kontext. Sie dienen dazu, den Code sauberer, effizienter und einfacher zu verstehen zu machen. Einige Beispiele für Design Patterns, die in Java häufig verwendet werden, sind:
 
 - Klassenfabrik (Factory Pattern)
 - Singleton Pattern
 - Builder Pattern
 - [weitere Java Design Patterns](https://refactoring.guru/design-patterns/java)
 
-15. <a id="#a015">A015</a> **Verwenden aussagekräftige Rückgabewerte und -typen**: Wenn eine Methode einen Wert zurückgibt, sollte dieser Wert aussagekräftig sein und genau das darstellen, was die Methode tut. Es ist auch hilfreich, konsistente Rückgabetypen zu verwenden.
+### <a id="#a015">A015</a> Verwenden aussagekräftige Rückgabewerte und -typen
 
-16. <a id="#a016">A016</a> **Verwenden von JavaDoc für Dokumentation**: JavaDoc ist ein Standard für das Kommentieren von Java-Code, der dabei hilft, den Code zu dokumentieren und zu verstehen. Es ist besonders nützlich für größere Codebasen oder wenn mehrere Entwickler an einem Projekt arbeiten. Mit JavaDoc können Methoden, Parameter, Rückgabewerte und mehr dokumentiert werden. Diese Dokumentation kann dann von verschiedenen Tools verwendet werden, um automatisch API-Dokumentation zu generieren, oder um in einer integrierten Entwicklungsumgebung (IDE) bessere Hinweise und Autovervollständigungen zu bieten.
+Wenn eine Methode einen Wert zurückgibt, sollte dieser Wert aussagekräftig sein und genau das darstellen, was die Methode tut. Es ist auch hilfreich, konsistente Rückgabetypen zu verwenden.
+
+### <a id="#a016">A016</a> Verwenden von JavaDoc für Dokumentation
+
+JavaDoc ist ein Standard für das Kommentieren von Java-Code, der dabei hilft, den Code zu dokumentieren und zu verstehen. Es ist besonders nützlich für größere Codebasen oder wenn mehrere Entwickler an einem Projekt arbeiten. Mit JavaDoc können Methoden, Parameter, Rückgabewerte und mehr dokumentiert werden. Diese Dokumentation kann dann von verschiedenen Tools verwendet werden, um automatisch API-Dokumentation zu generieren, oder um in einer integrierten Entwicklungsumgebung (IDE) bessere Hinweise und Autovervollständigungen zu bieten.
+
+### <a id="#a017">A017</a> Code nicht kommentieren
+
+Schlechter Code sollte nicht kommentiert werden, sondern sollte stattdessen refaktoriert werden, um ihn besser lesbar und verständlich zu machen. Kommentare sollten nur verwendet werden, wenn es notwendig ist, um den Zweck des Codes zu erklären oder um auf Probleme hinzuweisen, die nicht durch Refactoring behoben werden können.
+
 
 ## <a id="#j001">J001</a> Linter verwenden
 
