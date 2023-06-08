@@ -22,55 +22,55 @@
 
 ## Allgemein
 
-### A001 **Folgen des KISS-Prinzips (Keep it simple and stupid)
+### A001 Folgen des KISS-Prinzips (Keep it simple and stupid)
 
 Die Entwicklung von Software sollte nicht der Selbstverwirklichung des Entwicklers dienen, sondern der Lösung eines Problems. Daher sollte Architektur, Code und Dokumentation so einfach wie möglich gehalten werden. Komplexe Lösungen sollten vermieden werden, wenn einfachere Lösungen möglich sind.
 
-### A002 **Folgen des DRY-Prinzips (Don't Repeat Yourself)
+### A002 Folgen des DRY-Prinzips (Don't Repeat Yourself)
 
 Wird festgestellt, dass derselbe Code an mehreren Stellen verwendet wird, sollte in Betracht gezogen werden, diesen Code in eine Funktion oder ein Modul zu extrahieren und es dann jedes Mal zu verwenden, wenn es benötigt wird.
 
-### A003 **Konsistente Benennung von Variablen und Funktionen
+### A003 Konsistente Benennung von Variablen und Funktionen
 
 Es sollte sichergestellt werden, dass die verwendeten Namen aussagekräftig sind und den Zweck des Codes genau beschreiben. Die Benennung sollte auch konsistent sein.
 
-### A004 **Anwendung von ES6 Features
+### A004 Anwendung von ES6 Features
 
 Mit ES6 stehen viele neue Möglichkeiten zur Verfügung, um den Code zu verbessern. Beispielsweise könnten Pfeilfunktionen, Template-Strings, Default-Parameter, Rest- und Spread-Operator, Destructuring-Zuweisungen, `const` und `let` anstelle von `var` für eine bessere Kontrolle des Scopings, Klassen, Module, Promises und Iteratoren verwendet werden, um den Code kürzer und leichter lesbar zu machen.
 
-### A005 **Vermeidung von Callback-Hölle
+### A005 Vermeidung von Callback-Hölle
 
 Verschachtelte Callbacks sollten vermieden werden, da sie den Code schwer lesbar und wartbar machen. Promises oder `async/await` können verwendet werden, um den asynchronen Code besser handhaben zu können.
 
-### A006 **Einsatz von Linter und Formatter
+### A006 Einsatz von Linter und Formatter
 
 Tools wie ESLint und Prettier können dabei helfen, den Code konsistent und fehlerfrei zu halten.
 
-### A007 **Schreiben von Unit-Tests
+### A007 Schreiben von Unit-Tests
 
 Guter refaktorierter Code sollte immer von Tests begleitet werden. Sie helfen dabei, sicherzustellen, dass der Code nach dem Refactoring immer noch wie erwartet funktioniert.
 
-### A008 **Anwendung Modulare Architektur
+### A008 Anwendung Modulare Architektur
 
 Der Code sollte in kleinere, wiederverwendbare Module aufgeteilt werden. Dies erhöht die Lesbarkeit und erleichtert die Wartung und das Testen.
 
-### A009 **Selbsterklärender Code
+### A009 Selbsterklärender Code
 
 Kommentare sollten vermieden werden, wo der Code selbst klar sein kann. Guter Code sollte größtenteils selbsterklärend sein.
 
-### A010  **Anwendung des SOLID-Prinzips
+### A010  Anwendung des SOLID-Prinzips
 
 SOLID ist ein Akronym für fünf Prinzipien des objektorientierten Designs und der Programmierung, die dazu beitragen, dass der Code sauber, robust und wartbar bleibt.
 
-### A011 **Performance-Optimierungen
+### A011 Performance-Optimierungen
 
 Auf teure Operationen wie unnötige DOM-Manipulationen oder ineffiziente Schleifen sollte geachtet werden. Performance-Tools wie die Chrome DevTools können genutzt werden, um Flaschenhälse zu identifizieren und zu beheben.
 
-### A012 **Anwendung Funktionale Programmierkonzepte
+### A012 Anwendung Funktionale Programmierkonzepte
 
 Funktionale Programmierung kann dazu beitragen, dass der Code besser strukturiert und leichter zu testen ist. Konzepte wie Unveränderlichkeit (Immutability), reine Funktionen und höherwertige Funktionen (Higher Order Functions) sind besonders nützlich.
 
-### A013 **Fehlerbehandlung
+### A013 Fehlerbehandlung
 
 Es sollte sichergestellt werden, dass der Code ordnungsgemäß mit Fehlern umgeht. Dies könnte beinhalten, dass versucht wird, Fehler frühzeitig zu werfen, anstatt sie zu ignorieren, und dass `try/catch`-Blöcke verwendet werden, um Fehler effektiv zu behandeln.
 
