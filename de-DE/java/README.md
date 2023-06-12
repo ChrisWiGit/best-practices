@@ -531,6 +531,11 @@ JavaDoc ist eine Möglichkeit, um den Code zu dokumentieren und seine Lesbarkeit
 JavaDoc-Kommentare können verwendet werden, um den Zweck und die Verwendung von Klassen, Methoden und Variablen zu erklären.
 Durch das Hinzufügen von JavaDoc-Kommentaren können andere Entwickler den Code besser verstehen und die Wartbarkeit des Codes verbessern.
 
+> Es ist zu beachten, dass JavaDoc für öffentliche API den meisten Nutzen hat. 
+> Der Einsatz in Projekten, in denen Entwickler auf einen gut verständlich Code Zugriff können, kann der Einsatz von JavaDoc zum Teil stark verringert werden.
+> Selbstsprechende Methoden, Parameter und Exceptions könnten dann nur noch mit Zusatzinformationen dokumentiert werden, um Besonderheiten zu dokumentieren.
+> Beispielsweise können z.B. throws Dokumentation entfallen, weil jede Exception ihren Fehlerfall im Namen trägt.
+
 ### Vorteile
 
 - Durch die Verwendung von JavaDoc-Kommentaren kann der Code besser dokumentiert werden, was dazu beiträgt, dass andere Entwickler den Code besser verstehen und die Wartbarkeit des Codes verbessern können.
@@ -541,6 +546,7 @@ Durch das Hinzufügen von JavaDoc-Kommentaren können andere Entwickler den Code
 ### Nachteile
 
 - Änderungen von Code müssen auch in der Doku geändert werden, anderfalls kann es zu Verwirrungen kommen.
+- Die Erstellung solcher Dokumentation ist aufwändig und erfordert Disziplin
 
 ### Ausnahmen
 
