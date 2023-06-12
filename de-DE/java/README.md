@@ -1394,7 +1394,7 @@ Es ist eine bewährte Praxis, die Methoden `computeIfAbsent` und `putIfAbsent` f
 
 ### Problem
 
-Bei der Arbeit mit HashMaps in Java besteht das Risiko von Race Conditions oder unerwarteten Überschreibungen von Werten, wenn mehrere Threads gleichzeitig auf die HashMap zugreifen und Werte hinzufügen möchten.
+Der folgende Code ist umständlich und kann eleganter geschrieben werden, um potenzielle Fehlerquellen zu reduzieren und sich wiederholender Code zu vermeiden.
 
 ```java
 HashMap<String, List<String>> map = new HashMap<>();
@@ -1426,7 +1426,7 @@ defaultList.add(value);
 
 ### Vorteile
 
-- Vermeidung von Race Conditions und unerwarteten Überschreibungen von Werten in HashMaps
+- Verwendet getestete Standard-Java Methoden für genau diesen Einsatzweck
 - Einfachere und sicherere Handhabung beim Hinzufügen von Werten zu einem Schlüssel, wenn der Schlüssel nicht vorhanden ist
 - Verbesserte Effizienz und Lesbarkeit des Codes
 
