@@ -975,7 +975,7 @@ Das Guard Pattern sollte nicht blindlings auf jede Bedingungsprüfung angewendet
 
 ### Weiterführende Literatur/Links
 
-- [Guard Clause - Martin Fowler](https://martinfowler.com/bliki/GuardClause.html)
+- [Guard Clause - Martin Fowler](https://refactoring.com/catalog/replaceNestedConditionalWithGuardClauses.html)
 
 ## J013 Positiv formulierte If-Bedingungen und Auslagerung komplexer Bedingungen
 
