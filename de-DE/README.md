@@ -31,13 +31,15 @@ Dabei werden Code-Duplikate entfernt, komplexe Teile vereinfacht, Code-Standards
 
 Best Practices sind bewährte Methoden oder Techniken, die in der Softwareentwicklung angewendet werden, um qualitativ hochwertigen und effizienten Code zu schreiben. Sie repräsentieren bewährte Ansätze und Lösungen für häufig auftretende Probleme oder Herausforderungen. Best Practices helfen dabei, den Entwicklungsprozess zu verbessern, die Code-Qualität zu steigern und potenzielle Fehler oder Probleme zu vermeiden. Sie basieren auf Erfahrungen, bewährten Methoden und Industriestandards und dienen als Richtlinien für Entwickler, um bessere Software zu entwickeln.
 
-### Design Patterns
+### Design Patterns (Entwurfsmuster)
 
 Design Patterns sind bewährte Lösungsansätze für häufig auftretende Probleme in der Softwareentwicklung. Sie bieten allgemeine Lösungen, die in bestimmten Situationen angewendet werden können, um den Entwurfsprozess zu erleichtern und die Wiederverwendbarkeit, Flexibilität und Erweiterbarkeit von Software zu verbessern. Design Patterns helfen Entwicklern, wiederkehrende Designprobleme zu identifizieren und bieten Lösungen in Form von abstrakten Mustern und Strukturen. Sie dienen als Baupläne für den Aufbau von Softwarekomponenten und fördern bewährte Entwurfsprinzipien wie die Trennung von Verantwortlichkeiten, die Erweiterbarkeit und die lose Kopplung von Komponenten.
 
 > Es ist wichtig zu beachten, dass Design Patterns ebenfalls kein Zwang sind und nicht in jeder Situation angewendet werden müssen. Sie sind eher Empfehlungen, die je nach Anforderungen und Kontext angewendet werden können, um den Entwurfsprozess zu unterstützen und bewährte Lösungen anzubieten.
 
 ## Allgemeines Code-Refactoring
+
+Code Refactoring (Code-Überarbeitung) ist der Prozess der Überarbeitung und Umstrukturierung des Quellcodes einer Software, um ihn effizienter, lesbarer und einfacher zu warten, ohne dabei das externe Verhalten der Anwendung zu ändern. Dabei werden technische Schulden abgebaut und die Codequalität verbessert.
 
 1. **Code Refactoring als Teil der Programmierung**: Code Refactoring sollte als integraler Bestandteil der normalen Programmiertätigkeit betrachtet werden.
 
