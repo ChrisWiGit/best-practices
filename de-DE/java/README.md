@@ -769,13 +769,13 @@ public Response getNumber(@PathParam("number") @Min(1) @Max(10) int number) {
 
 ```java
 @POST
-@Path("/example/{name}/{age}/{email}/{password}")
+@Path("/example/{name}/{age}/{email}/{username}")
 @Consumes(MediaType.APPLICATION_JSON)
 public Response exampleMethod(
         @PathParam("name") final String name,
         @PathParam("age") @Min(value = 18, message = "Age must be at least 18") @Max(value = 120, message = "Age must not exceed 120") final int age,
         @PathParam("email") @Email(message = "Invalid email address") final String email,
-        @PathParam("password") @Pattern(regexp = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$", message = "Password must be at least 8 characters long and contain at least one letter and one number") final String password
+        @PathParam("username") @Pattern(regexp = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$", message = "Username must be at least 8 characters long and contain at least one letter and one number") final String username
 ) {
     // Methodenlogik hier...
 
