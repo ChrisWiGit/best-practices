@@ -1,5 +1,7 @@
 # Best Practices und Design Patterns
 
+> Dieser Text wurde mit KI Tools generiert und von Menschen überarbeitet.
+
 - [Best Practices und Design Patterns](#best-practices-und-design-patterns)
   - [Allgemein](#allgemein)
   - [J001 Linter verwenden](#j001-linter-verwenden)
