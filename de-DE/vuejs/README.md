@@ -1,5 +1,6 @@
 # VueJs 2 Best Practices und Design Patterns
 
+> Dieser Text wurde mit KI Tools generiert und von Menschen überarbeitet.
 <!-- TOC -->
 
 - [VueJs 2 Best Practices und Design Patterns](#vuejs-2-best-practices-und-design-patterns)
