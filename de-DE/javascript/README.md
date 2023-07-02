@@ -1,5 +1,7 @@
 # JavaScript Best Practices und Design Patterns
 
+> Dieser Text wurde mit KI Tools generiert und von Menschen überarbeitet.
+
 - [JavaScript Best Practices und Design Patterns](#javascript-best-practices-und-design-patterns)
   - [Allgemein](#allgemein)
   - [JS001 Optionaler Operator ?. / Optional Chaining verwenden](#js001-optionaler-operator---optional-chaining-verwenden)
